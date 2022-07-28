@@ -78,4 +78,8 @@ return packer.startup(function(use)
   
   -- Telescope
   use({ "nvim-telescope/telescope.nvim", commit = "d96eaa914aab6cfc4adccb34af421bdd496468b0" })
+  use({'nvim-lua/popup.nvim'})
+  use({ 'nvim-telescope/telescope-media-files.nvim'})
+  use({'xiyaowong/telescope-emoji.nvim'})
+
 end)

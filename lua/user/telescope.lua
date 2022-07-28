@@ -4,6 +4,8 @@ if not status_ok then
 end
 
 local actions = require "telescope.actions"
+telescope.load_extension('media_files')
+telescope.load_extension('emoji')
 
 telescope.setup {
   defaults = {
@@ -87,6 +89,24 @@ telescope.setup {
     -- builtin picker
   },
   extensions = {
+
+    media_files = {
+      -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
+      filetypes = {"png", "webp", "jpg", "jpeg"},
+      find_cmd = "rg" -- find command (defaults to `fd`)
+    },
+    emoji = {
+      action = function(emoji)
+        -- argument emoji is a table.
+        -- {name="", value="", cagegory="", description=""}
+
+        vim.fn.setreg("*", emoji.value)
+        print([[Press p or "*p to paste this emoji]] .. emoji.value)
+
+        -- insert emoji when picked
+        -- vim.api.nvim_put({ emoji.value }, 'c', false, true)
+      end,
+    }
     -- Your extension configuration goes here:
     -- extension_name = {
     --   extension_config_key = value,
