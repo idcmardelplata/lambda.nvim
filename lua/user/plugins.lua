@@ -52,10 +52,10 @@ return packer.startup(function(use)
   use 'ghifarit53/tokyonight-vim'
 
   use(
-    { "iamcco/markdown-preview.nvim", 
+    { "iamcco/markdown-preview.nvim",
       run = "cd app && npm install",
       setup = function() vim.g.mkdp_filetypes = { "markdown", "md" } end,
-      ft = { "markdown" }, 
+      ft = { "markdown" },
     })
 
     -- cmp plugins
