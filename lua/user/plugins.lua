@@ -114,6 +114,9 @@ return packer.startup(function(use)
       "rouge8/neotest-rust",
     }}
 
+  -- Neogit
+  use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim', 'sindrets/diffview.nvim' }
+
   if PACKER_BOOTSTRAP  then
     require("packer").PackerSync()
   end
