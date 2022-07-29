@@ -117,6 +117,9 @@ return packer.startup(function(use)
   -- Neogit
   use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim', 'sindrets/diffview.nvim' }
 
+  -- Dashboard
+  use {'glepnir/dashboard-nvim'}
+
   if PACKER_BOOTSTRAP  then
     require("packer").PackerSync()
   end
