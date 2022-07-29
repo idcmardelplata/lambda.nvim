@@ -24,4 +24,4 @@ local opt = {noremap = true, silent = true}
 
 keymap("n", "<leader>gv", ":DiffviewOpen<cr>", opt)
 keymap("n", "<leader>gc", ":DiffviewClose<cr>", opt)
-keymap("n", "<leader>gg", ":Neogit<cr>", opt)
+keymap("n", "<leader>gg", ":Neogit kind=tab<cr>", opt)
