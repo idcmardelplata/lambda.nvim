@@ -51,6 +51,8 @@ return packer.startup(function(use)
 
   use 'ghifarit53/tokyonight-vim'
 
+  use { "windwp/nvim-autopairs"}
+
   use(
     { "iamcco/markdown-preview.nvim",
       run = "cd app && npm install",
@@ -86,5 +88,6 @@ return packer.startup(function(use)
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'}
+  use "p00f/nvim-ts-rainbow"
 
 end)
