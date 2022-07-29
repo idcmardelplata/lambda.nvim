@@ -99,7 +99,20 @@ return packer.startup(function(use)
   use({ "numToStr/Comment.nvim", commit = "2c26a00f32b190390b664e56e32fd5347613b9e2" })
 	use({ "JoosepAlviste/nvim-ts-context-commentstring", commit = "88343753dbe81c227a1c1fd2c8d764afb8d36269" })
 
+  -- Tmux navigation
   use({ "aserowy/tmux.nvim"})
+
+  -- Neotest
+  use {
+  "nvim-neotest/neotest",
+  requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "antoinemadec/FixCursorHold.nvim",
+      "haydenmeade/neotest-jest",
+      "nvim-neotest/neotest-python",
+      "rouge8/neotest-rust",
+    }}
 
   if PACKER_BOOTSTRAP  then
     require("packer").PackerSync()
