@@ -1,20 +1,21 @@
+local subdir = "user"
 local config_files = {
-  "user.options",
-  "user.keymaps",
-  "user.plugins",
-  "user.colorscheme",
-  "user.cmp",
-  "user.lsp",
-  "user.telescope",
-  "user.treesitter",
-  "user.autopairs",
-  "user.comments",
-  "user.tmux",
-  "user.neotest",
-  "user.neogit",
-  "user.dashboard"
+  "options",
+  "keymaps",
+  "plugins",
+  "colorscheme",
+  "cmp",
+  "lsp",
+  "telescope",
+  "treesitter",
+  "autopairs",
+  "comments",
+  "tmux",
+  "neotest",
+  "neogit",
+  "dashboard"
 }
 
 for _ , file  in ipairs(config_files ) do
-  require(file)
+  require(subdir .. "." .. file)
 end
