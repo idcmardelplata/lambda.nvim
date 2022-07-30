@@ -1,14 +1,20 @@
-require("user.options")
-require("user.keymaps")
-require("user.plugins")
-require("user.colorscheme")
-require("user.cmp")
-require("user.lsp")
-require("user.telescope")
-require("user.treesitter")
-require("user.autopairs")
-require("user.comments")
-require("user.tmux")
-require("user.neotest")
-require("user.neogit")
-require("user.dashboard")
+local config_files = {
+  "user.options",
+  "user.keymaps",
+  "user.plugins",
+  "user.colorscheme",
+  "user.cmp",
+  "user.lsp",
+  "user.telescope",
+  "user.treesitter",
+  "user.autopairs",
+  "user.comments",
+  "user.tmux",
+  "user.neotest",
+  "user.neogit",
+  "user.dashboard"
+}
+
+for _ , file  in ipairs(config_files ) do
+  require(file)
+end
