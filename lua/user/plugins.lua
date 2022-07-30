@@ -123,6 +123,10 @@ return packer.startup(function(use)
   -- Nvim Tree
   use { 'kyazdani42/nvim-tree.lua', requires = { 'kyazdani42/nvim-web-devicons'}}
 
+  -- Bufferline 
+  use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
+
+
   if PACKER_BOOTSTRAP  then
     require("packer").PackerSync()
   end

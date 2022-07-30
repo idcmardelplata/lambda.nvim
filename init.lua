@@ -15,7 +15,8 @@ local config_files = {
   "neogit",
   "dashboard",
   "gitsigns",
-  "nvim_tree"
+  "nvim_tree",
+  "bufferline"
 }
 
 for _ , file  in ipairs(config_files ) do
