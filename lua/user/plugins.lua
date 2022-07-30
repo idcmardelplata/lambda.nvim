@@ -120,6 +120,9 @@ return packer.startup(function(use)
   -- dadbod for database management
   use {'tpope/vim-dadbod', 'kristijanhusak/vim-dadbod-ui'}
 
+  -- Nvim Tree
+  use { 'kyazdani42/nvim-tree.lua', requires = { 'kyazdani42/nvim-web-devicons'}}
+
   if PACKER_BOOTSTRAP  then
     require("packer").PackerSync()
   end
