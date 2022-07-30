@@ -120,6 +120,9 @@ return packer.startup(function(use)
   -- Dashboard
   use {'glepnir/dashboard-nvim'}
 
+  -- dadbod for database management
+  use {'tpope/vim-dadbod', 'kristijanhusak/vim-dadbod-ui'}
+
   if PACKER_BOOTSTRAP  then
     require("packer").PackerSync()
   end
