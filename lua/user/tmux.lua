@@ -1,6 +1,6 @@
 local is_ok, tmux = pcall(require, "tmux")
 if not is_ok  then
-  vim.notify("Error al cargar tmux")
+  error("Error al cargar tmux")
   return
 end
 
