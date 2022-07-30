@@ -125,7 +125,7 @@ return packer.startup(function(use)
 
   -- Bufferline 
   use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
-
+  
 
   if PACKER_BOOTSTRAP  then
     require("packer").PackerSync()
