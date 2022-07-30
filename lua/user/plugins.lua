@@ -44,10 +44,7 @@ return packer.startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- Use dependency and run lua function after load
-  use {
-    'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
-    config = function() require('gitsigns').setup() end
-  }
+  use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
 
   use 'ghifarit53/tokyonight-vim'
 

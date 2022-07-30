@@ -13,7 +13,8 @@ local config_files = {
   "tmux",
   "neotest",
   "neogit",
-  "dashboard"
+  "dashboard",
+  "gitsigns"
 }
 
 for _ , file  in ipairs(config_files ) do
