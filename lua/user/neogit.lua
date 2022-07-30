@@ -1,6 +1,6 @@
 local is_ok, ngit = pcall(require, "neogit")
 if not is_ok then
-  vim.notify("Error al cargar neogit")
+  error("Error al cargar neogit")
   return
 end
 

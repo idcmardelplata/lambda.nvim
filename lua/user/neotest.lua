@@ -1,6 +1,6 @@
 local is_ok, neotest = pcall(require, "neotest")
 if not is_ok then
-  vim.notify("Error al cargar neotest")
+  error("Error al cargar neotest")
   return
 end
 

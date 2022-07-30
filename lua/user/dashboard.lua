@@ -1,6 +1,6 @@
 local is_ok, db = pcall(require, "dashboard")
 if not is_ok then
-  vim.notify("Error al cargar el dashboard")
+  error("Error al cargar el dashboard")
   return
 end
 
