@@ -22,5 +22,6 @@ null_ls.setup({
     formatting.terraform_fmt,
     formatting.tidy,
     -- diagnostics.flake8
+    diagnostics.yamllint,
 	},
 })
