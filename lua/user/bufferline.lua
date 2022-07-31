@@ -21,17 +21,17 @@ buf.setup {
             --- Please note some names can/will break the
             --- bufferline so use this at your discretion knowing that it has
             --- some limitations that will NOT be fixed.
-            name_formatter = function(buf)  -- buf contains a "name", "path" and "bufnr"
+            name_formatter = function(buffer)  -- buf contains a "name", "path" and "bufnr"
               -- remove extension from markdown files for example
-              if buf.name:match('%.md') then
-                return vim.fn.fnamemodify(buf.name, ':t:r')
+              if buffer.name:match('%.md') then
+                return vim.fn.fnamemodify(buffer.name, ':t:r')
               end
             end,
             max_name_length = 18,
             max_prefix_length = 15, -- prefix used when a buffer is deduplicated
             tab_size = 18,
             diagnostics =  "nvim_lsp",
-            diagnostics_indicator = function(count, level)
+            diagnostics_indicator = function(count, _)
               return "("..count..")"
             end,
             show_buffer_icons = true ,
