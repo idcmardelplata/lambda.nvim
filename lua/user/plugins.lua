@@ -46,8 +46,9 @@ return packer.startup(function(use)
   -- Use dependency and run lua function after load
   use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
 
+ -- themes
   use 'ghifarit53/tokyonight-vim'
-
+  use 'navarasu/onedark.nvim'
   -- autopairs
   use { "windwp/nvim-autopairs"}
 
