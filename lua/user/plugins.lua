@@ -125,7 +125,9 @@ return packer.startup(function(use)
 
   -- Bufferline 
   use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
-  
+
+  -- feline bar
+  use { 'feline-nvim/feline.nvim', branch = '0.5-compat' }
 
   if PACKER_BOOTSTRAP  then
     require("packer").PackerSync()
