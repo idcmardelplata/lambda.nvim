@@ -17,7 +17,8 @@ local config_files = {
   "gitsigns",
   "nvim_tree",
   "bufferline",
-  "feline_bar"
+  "feline_bar",
+  "lsp"
 }
 
 for _ , file  in ipairs(config_files ) do
