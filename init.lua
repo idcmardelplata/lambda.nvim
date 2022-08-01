@@ -18,7 +18,8 @@ local config_files = {
   "nvim_tree",
   "bufferline",
   "feline_bar",
-  "lsp"
+  "lsp",
+  "wich_key"
 }
 
 for _ , file  in ipairs(config_files ) do

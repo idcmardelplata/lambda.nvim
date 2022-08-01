@@ -130,6 +130,11 @@ return packer.startup(function(use)
   -- feline bar
   use { 'feline-nvim/feline.nvim', branch = '0.5-compat' }
 
+
+
+  -- wich key
+  use { "folke/which-key.nvim", commit = "bd4411a2ed4dd8bb69c125e339d837028a6eea71" }
+
   if PACKER_BOOTSTRAP  then
     require("packer").PackerSync()
   end
