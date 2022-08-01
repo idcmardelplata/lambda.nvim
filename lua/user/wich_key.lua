@@ -20,7 +20,7 @@ plugins = {
       text_objects = false, -- help for text objects triggered after entering an operator
       windows = false, -- default bindings on <c-w>
       nav = false, -- misc bindings to work with windows
-      z = false, -- bindings for folds, spelling and others prefixed with z
+      z = true, -- bindings for folds, spelling and others prefixed with z
       g = false, -- bindings for prefixed with g
     },
   },
@@ -134,11 +134,21 @@ local gs = require("gitsigns")
    ["[E"] = {require("lspsaga.diagnostic").goto_prev{severity = vim.diagnostic.severity.ERROR}, "Goto previous error"},
    ["]E"] = {require("lspsaga.diagnostic").goto_next{severity = vim.diagnostic.severity.ERROR}, "Goto previous error"},
  }
+ local test = {
+   name = "Testing",
+   n = { function() require("neotest").jump.next({status = 'failed'}) end, "Jump next failed test"},
+   p = { function() require("neotest").jump.prev({status = 'failed'} )end, "Jump next failed test"},
+   s = {function() require("neotest").summary.toggle() end, "Test summary"},
+   a = {function() require('neotest').run.attach({}) end, "Attach to the current test runner"},
+   S = {function() require('neotest').run.stop({}) end, "Stop test" },
+   r = {function() require('neotest').run.run()  end, "Run current test" },
+   l = {function() require('neotest').run.run_last()  end, "Run last test" },
+   o = {function() require('neotest').output.open({enter = true, short = true}) end, "Open test output"},
+   R = {function() require('neotest').run.run(vim.fn.expand('%')) end, "Open test output"},
+ }
 -- local db = {}
--- local test = {}
 -- local telescope = {}
 key.register(files, { prefix = "<leader>f"})
 key.register(git, { prefix = "<leader>g"})
 key.register(lsp, {prefix = "<leader>l"})
-
-
+key.register(test, {prefix = "<leader>t"})
