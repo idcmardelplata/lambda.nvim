@@ -99,38 +99,38 @@ show_outline = {
 local action = require("lspsaga.codeaction")
 
 -- code action
-vim.keymap.set("n", "<leader>ca", action.code_action, { silent = true,noremap = true })
-vim.keymap.set("v", "<leader>ca", function()
+-- vim.keymap.set("n", "<leader>ca", action.code_action, { silent = true,noremap = true })
+  vim.keymap.set("v", "<leader>ca", function()
     vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<C-U>", true, false, true))
     action.range_code_action()
 end, { silent = true,noremap =true })
 
-vim.keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", { silent = true,noremap = true })
-vim.keymap.set("v", "<leader>ca", "<cmd><C-u>Lspsaga range_code_action<CR>", { silent = true,noremap = true })
+-- vim.keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", { silent = true,noremap = true })
+-- vim.keymap.set("v", "<leader>ca", "<cmd><C-u>Lspsaga range_code_action<CR>", { silent = true,noremap = true })
 
 
 -- Configure finder
-vim.keymap.set("n","gh", require("lspsaga.finder").lsp_finder, { silent = true,noremap = true })
+-- vim.keymap.set("n","gh", require("lspsaga.finder").lsp_finder, { silent = true,noremap = true })
 
 -- Configure documentation
-vim.keymap.set("n", "K", require("lspsaga.hover").render_hover_doc, { silent = true })
+-- vim.keymap.set("n", "K", require("lspsaga.hover").render_hover_doc, { silent = true })
 
 --Signature help
-vim.keymap.set("n", "gs", require("lspsaga.signaturehelp").signature_help, { silent = true,noremap = true})
+-- vim.keymap.set("n", "gs", require("lspsaga.signaturehelp").signature_help, { silent = true,noremap = true})
 
 -- rename
-vim.keymap.set("n", "gr", require("lspsaga.rename").lsp_rename, { silent = true,noremap = true })
+-- vim.keymap.set("n", "gr", require("lspsaga.rename").lsp_rename, { silent = true,noremap = true })
 
 -- Preview Definition
-vim.keymap.set("n", "gd", require("lspsaga.definition").preview_definition, { silent = true,noremap = true })
+-- vim.keymap.set("n", "gd", require("lspsaga.definition").preview_definition, { silent = true,noremap = true })
 
 
 -- Jump and show diagnostics
-vim.keymap.set("n", "<leader>cd", require("lspsaga.diagnostic").show_line_diagnostics, { silent = true,noremap = true })
+-- vim.keymap.set("n", "<leader>cd", require("lspsaga.diagnostic").show_line_diagnostics, { silent = true,noremap = true })
 
 -- jump diagnostic
-vim.keymap.set("n", "[e", require("lspsaga.diagnostic").goto_prev, { silent = true, noremap =true })
-vim.keymap.set("n", "]e", require("lspsaga.diagnostic").goto_next, { silent = true, noremap =true })
+-- vim.keymap.set("n", "[e", require("lspsaga.diagnostic").goto_prev, { silent = true, noremap =true })
+-- vim.keymap.set("n", "]e", require("lspsaga.diagnostic").goto_next, { silent = true, noremap =true })
 
 -- or jump to error
 vim.keymap.set("n", "[E", function()
@@ -139,5 +139,3 @@ end, { silent = true, noremap = true })
 vim.keymap.set("n", "]E", function()
   require("lspsaga.diagnostic").goto_next({ severity = vim.diagnostic.severity.ERROR })
 end, { silent = true, noremap = true })
-
-
