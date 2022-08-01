@@ -59,7 +59,7 @@ plugins = {
   ignore_missing = true, -- enable this to hide mappings for which you didn't specify a label
   hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ "}, -- hide mapping boilerplate
   show_help = false, -- show help message on the command line when the popup is visible
-  triggers = {"auto"}, -- automatically setup triggers
+  triggers = "auto", -- automatically setup triggers
   -- triggers = {"<leader>"} -- or specify a list manually
   triggers_blacklist = {
     -- list of mode / prefixes that should never be hooked by WhichKey
@@ -115,8 +115,8 @@ local gs = require("gitsigns")
    P = {gs.preview_hunk, "Preview hunk"},
    B = {function() gs.blame_line({full = true}) end, "Blame line"},
    d = {gs.diffthis, "Show diff in the file"},
-   v = {"<cmd>GitViewOpen<cr>", "Show diff in any files"},
-   c = {"<cmd>GitViewClose<cr>", "Close GitDiff"},
+   v = {"<cmd>DiffviewOpen<cr>", "Show diff in any files"},
+   c = {"<cmd>DiffviewClose<cr>", "Close GitDiff"},
    g = {"<cmd>Neogit kind=tab<cr>", "Close GitDiff"},
  }
 
@@ -135,8 +135,10 @@ local gs = require("gitsigns")
    ["]E"] = {require("lspsaga.diagnostic").goto_next{severity = vim.diagnostic.severity.ERROR}, "Goto previous error"},
  }
 -- local db = {}
-key.register(files, { prefix = "f"})
-key.register(git, { prefix = "g"})
-key.register(lsp, {prefix = "c"})
+-- local test = {}
+-- local telescope = {}
+key.register(files, { prefix = "<leader>f"})
+key.register(git, { prefix = "<leader>g"})
+key.register(lsp, {prefix = "<leader>l"})
 
 

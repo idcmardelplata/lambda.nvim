@@ -7,7 +7,7 @@ local keymap = vim.api.nvim_set_keymap
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+-- vim.g.maplocalleader = " "
 
 -- Modes
 --   normal_mode = "n",
@@ -59,19 +59,9 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
--- Telescope 
--- keymap("n","<C-f>","<cmd>lua require('telescope.builtin').find_files( require('telescope.themes').get_dropdown({previewer = false}))<cr>", opts)
--- keymap("n", "<C-t>", "<cmd>Telescope live_grep<cr>", opts)
-
 -- Custom keymaps
--- keymap("n", "<C-s>", "<cmd>:write<cr>", opts)
--- keymap("n", "<C-x>", "<cmd>:q<cr>", opts)
-
--- NvimTree
-  -- keymap("n", "<C-e>", "<cmd>NvimTreeToggle<cr>", opts)
-  keymap("n", "<leader>", "<cmd>WhichKey<cr>", opts)
-
--- Neovim configurations
+keymap("n", "<C-s>", "<cmd>:write<cr>", opts)
+keymap("n", "<C-x>", "<cmd>:q<cr>", opts)
 
 -- Terminal --
 -- Better terminal navigation
