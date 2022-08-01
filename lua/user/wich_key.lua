@@ -93,7 +93,8 @@ local gs = require("gitsigns")
 
  local git = {
    name = "Git",
-   n = {function()
+   n = {
+     function()
        if vim.wo.diff then return ']c' end
        vim.schedule(function() gs.next_hunk() end)
        return '<Ignore>'
@@ -118,9 +119,24 @@ local gs = require("gitsigns")
    c = {"<cmd>GitViewClose<cr>", "Close GitDiff"},
    g = {"<cmd>Neogit kind=tab<cr>", "Close GitDiff"},
  }
- -- local lsp = {}
+
+ local lsp = {
+   name = "Lsp",
+   a = {function() require("lspsaga.codeaction").code_action(opts) end, "Code action"},
+   f = {require("lspsaga.finder").lsp_finder, "Find definitions and references"},
+   o = {require("lspsaga.hover").render_hover_doc, "Show documentation"},
+   s = {require("lspsaga.signaturehelp").signature_help, "Show signature and doc"},
+   r = {require("lspsaga.rename").lsp_rename, "Rename identifiers"},
+   p = {require("lspsaga.definition").preview_definition, "preview definition"},
+   d = {require("lspsaga.diagnostic").show_line_diagnostic, "show inline diagnostics"},
+   ["[e"] = {require("lspsaga.diagnostic").goto_prev, "Goto previous error"},
+   ["]e"] = {require("lspsaga.diagnostic").goto_next, "Goto next error"},
+   ["[E"] = {require("lspsaga.diagnostic").goto_prev{severity = vim.diagnostic.severity.ERROR}, "Goto previous error"},
+   ["]E"] = {require("lspsaga.diagnostic").goto_next{severity = vim.diagnostic.severity.ERROR}, "Goto previous error"},
+ }
 -- local db = {}
 key.register(files, { prefix = "f"})
 key.register(git, { prefix = "g"})
+key.register(lsp, {prefix = "c"})
 
 
