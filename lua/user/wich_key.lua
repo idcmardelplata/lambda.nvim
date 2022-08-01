@@ -114,6 +114,9 @@ local gs = require("gitsigns")
    P = {gs.preview_hunk, "Preview hunk"},
    B = {function() gs.blame_line({full = true}) end, "Blame line"},
    d = {gs.diffthis, "Show diff in the file"},
+   v = {"<cmd>GitViewOpen<cr>", "Show diff in any files"},
+   c = {"<cmd>GitViewClose<cr>", "Close GitDiff"},
+   g = {"<cmd>Neogit kind=tab<cr>", "Close GitDiff"},
  }
  -- local lsp = {}
 -- local db = {}

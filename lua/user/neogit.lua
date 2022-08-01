@@ -16,12 +16,3 @@ disable_signs = false,
   },
   -- Setting any section to `false` will make the section not render at all
 }
-
-local keymap = vim.api.nvim_set_keymap
-local opt = {noremap = true, silent = true}
-
--- Custom Neogit and DiffView keymaps
-
-keymap("n", "<leader>gv", ":DiffviewOpen<cr>", opt)
-keymap("n", "<leader>gc", ":DiffviewClose<cr>", opt)
-keymap("n", "<leader>gg", ":Neogit kind=tab<cr>", opt)
