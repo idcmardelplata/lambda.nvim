@@ -131,7 +131,7 @@ local gs = require("gitsigns")
    s = {require("lspsaga.signaturehelp").signature_help, "show signature and doc"},
    r = {require("lspsaga.rename").lsp_rename, "rename identifiers"},
    p = {require("lspsaga.definition").preview_definition, "preview definition"},
-   d = {require("lspsaga.diagnostic").show_line_diagnostic, "show inline diagnostics"},
+   d = {require("lspsaga.diagnostic").show_line_diagnostics, "show inline diagnostics"}, 
    ["[e"] = {require("lspsaga.diagnostic").goto_prev, "goto previous error"},
    ["]e"] = {require("lspsaga.diagnostic").goto_next, "goto next error"},
    ["[E"] = {require("lspsaga.diagnostic").goto_prev{severity = vim.diagnostic.severity.ERROR}, "goto previous error"},
