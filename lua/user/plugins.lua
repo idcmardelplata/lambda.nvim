@@ -138,6 +138,11 @@ return packer.startup(function(use)
   -- nvim-surround
   use({ "kylechui/nvim-surround"})
 
+
+
+  -- gh.nvim (support for github integration)
+  use { 'ldelossa/gh.nvim', requires = { { 'ldelossa/litee.nvim' } } }
+
   if PACKER_BOOTSTRAP  then
     require("packer").PackerSync()
   end

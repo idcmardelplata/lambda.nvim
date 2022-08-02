@@ -21,6 +21,8 @@ local config_files = {
   "lsp",
   "wich_key",
   "surround",
+  "litee",
+  "gh",
 }
 
 for _ , file  in ipairs(config_files ) do
