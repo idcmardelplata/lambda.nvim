@@ -81,12 +81,14 @@ local opts = {
 
 local files = {
   name = "Files",
-  f = {"<cmd>lua require('telescope.builtin').find_files( require('telescope.themes').get_dropdown({previewer = false}))<cr>", "Find files"},
-  r = {"<cmd>Telescope live_grep<cr>", "Search any world"},
-  c = {"<cmd>new<cr>", "Create new file"},
-  x = {"<cmd>:quit<cr>", "Close current buffer"},
-  s = {"<cmd>:write<cr>", "Write changes"},
-  e = {"<cmd>:NvimTreeToggle<cr>", "NvimTree"}
+  f = {"<cmd>lua require('telescope.builtin').find_files( require('telescope.themes').get_dropdown({previewer = false}))<cr>", "find files"},
+  r = {"<cmd>Telescope live_grep<cr>", "search any world"},
+  c = {"<cmd>new<cr>", "create new file"},
+  x = {"<cmd>:quit<cr>", "close current buffer"},
+  s = {"<cmd>:write<cr>", "write changes"},
+  e = {"<cmd>:NvimTreeToggle<cr>", "show tree"},
+  S = {"<cmd>:new<cr>", "create new buffer in horizontal"},
+  V = {"<cmd>:vnew<cr>", "create new buffer in vertical"},
 }
 
 local gs = require("gitsigns")
@@ -98,53 +100,55 @@ local gs = require("gitsigns")
        if vim.wo.diff then return ']c' end
        vim.schedule(function() gs.next_hunk() end)
        return '<Ignore>'
-     end, "Go to next hunk",
+     end, "go to next hunk",
    },
    p = {
      function()
       if vim.wo.diff then return '[c' end
       vim.schedule(function() gs.prev_hunk() end)
       return '<Ignore>'
-     end, "Go to previous hunk",
+     end, "go to previous hunk",
    },
-   s = { "<cmd>Gitsigns stage_hunk<cr>", "Stage hunk" },
+   s = { "<cmd>Gitsigns stage_hunk<cr>", "stage hunk" },
    r = { "<cmd>Gitsigns reset_hunk<cr>", "reset hunk" },
    b = { "<cmd>Gitsigns stage_buffer<cr>", "stage buffer" },
    u = {gs.undo_stage_hunk, "undo stage junk"},
-   R = {gs.reset_buffer, "Reset buffer"},
-   P = {gs.preview_hunk, "Preview hunk"},
-   B = {function() gs.blame_line({full = true}) end, "Blame line"},
-   d = {gs.diffthis, "Show diff in the file"},
-   v = {"<cmd>DiffviewOpen<cr>", "Show diff in any files"},
-   c = {"<cmd>DiffviewClose<cr>", "Close GitDiff"},
-   g = {"<cmd>Neogit kind=tab<cr>", "Close GitDiff"},
+   R = {gs.reset_buffer, "reset buffer"},
+   P = {gs.preview_hunk, "preview hunk"},
+   B = {function() gs.blame_line({full = true}) end, "blame line"},
+   d = {gs.diffthis, "show diff in the file"},
+   v = {"<cmd>DiffviewOpen<cr>", "show diff in any files"},
+   c = {"<cmd>DiffviewClose<cr>", "close gitdiff"},
+   g = {"<cmd>Neogit kind=tab<cr>", "close gitdiff"},
  }
 
+ -- TODO: Fix [e and ]e shortcuts
  local lsp = {
    name = "Lsp",
-   a = {function() require("lspsaga.codeaction").code_action(opts) end, "Code action"},
-   f = {require("lspsaga.finder").lsp_finder, "Find definitions and references"},
-   o = {require("lspsaga.hover").render_hover_doc, "Show documentation"},
-   s = {require("lspsaga.signaturehelp").signature_help, "Show signature and doc"},
-   r = {require("lspsaga.rename").lsp_rename, "Rename identifiers"},
+   a = {function() require("lspsaga.codeaction").code_action(opts) end, "code action"},
+   f = {require("lspsaga.finder").lsp_finder, "find definitions and references"},
+   o = {require("lspsaga.hover").render_hover_doc, "show documentation"},
+   s = {require("lspsaga.signaturehelp").signature_help, "show signature and doc"},
+   r = {require("lspsaga.rename").lsp_rename, "rename identifiers"},
    p = {require("lspsaga.definition").preview_definition, "preview definition"},
    d = {require("lspsaga.diagnostic").show_line_diagnostic, "show inline diagnostics"},
-   ["[e"] = {require("lspsaga.diagnostic").goto_prev, "Goto previous error"},
-   ["]e"] = {require("lspsaga.diagnostic").goto_next, "Goto next error"},
-   ["[E"] = {require("lspsaga.diagnostic").goto_prev{severity = vim.diagnostic.severity.ERROR}, "Goto previous error"},
-   ["]E"] = {require("lspsaga.diagnostic").goto_next{severity = vim.diagnostic.severity.ERROR}, "Goto previous error"},
+   ["[e"] = {require("lspsaga.diagnostic").goto_prev, "goto previous error"},
+   ["]e"] = {require("lspsaga.diagnostic").goto_next, "goto next error"},
+   ["[E"] = {require("lspsaga.diagnostic").goto_prev{severity = vim.diagnostic.severity.ERROR}, "goto previous error"},
+   ["]E"] = {require("lspsaga.diagnostic").goto_next{severity = vim.diagnostic.severity.ERROR}, "goto previous error"},
  }
+
  local test = {
    name = "Testing",
-   n = { function() require("neotest").jump.next({status = 'failed'}) end, "Jump next failed test"},
-   p = { function() require("neotest").jump.prev({status = 'failed'} )end, "Jump next failed test"},
-   s = {function() require("neotest").summary.toggle() end, "Test summary"},
-   a = {function() require('neotest').run.attach({}) end, "Attach to the current test runner"},
-   S = {function() require('neotest').run.stop({}) end, "Stop test" },
-   r = {function() require('neotest').run.run()  end, "Run current test" },
-   l = {function() require('neotest').run.run_last()  end, "Run last test" },
-   o = {function() require('neotest').output.open({enter = true, short = true}) end, "Open test output"},
-   R = {function() require('neotest').run.run(vim.fn.expand('%')) end, "Open test output"},
+   n = { function() require("neotest").jump.next({status = 'failed'}) end, "jump next failed test"},
+   p = { function() require("neotest").jump.prev({status = 'failed'} )end, "jump next failed test"},
+   s = {function() require("neotest").summary.toggle() end, "test summary"},
+   a = {function() require('neotest').run.attach({}) end, "attach to the current test runner"},
+   S = {function() require('neotest').run.stop({}) end, "stop test" },
+   r = {function() require('neotest').run.run()  end, "run current test" },
+   l = {function() require('neotest').run.run_last()  end, "run last test" },
+   o = {function() require('neotest').output.open({enter = true, short = true}) end, "open test output"},
+   R = {function() require('neotest').run.run(vim.fn.expand('%')) end, "run all test in this file"},
  }
 -- local db = {}
 -- local telescope = {}
