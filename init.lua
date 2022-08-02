@@ -19,7 +19,8 @@ local config_files = {
   "bufferline",
   "feline_bar",
   "lsp",
-  "wich_key"
+  "wich_key",
+  "surround",
 }
 
 for _ , file  in ipairs(config_files ) do

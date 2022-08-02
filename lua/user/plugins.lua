@@ -135,6 +135,9 @@ return packer.startup(function(use)
   -- wich key
   use { "folke/which-key.nvim", commit = "bd4411a2ed4dd8bb69c125e339d837028a6eea71" }
 
+  -- nvim-surround
+  use({ "kylechui/nvim-surround"})
+
   if PACKER_BOOTSTRAP  then
     require("packer").PackerSync()
   end
