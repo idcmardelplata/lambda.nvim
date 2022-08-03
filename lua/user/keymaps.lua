@@ -17,51 +17,63 @@ vim.g.mapleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
+
+local mappings = {
+  -- Better window navigation
+  {"n", "<C-h>", "<C-w>h"},
+  {"n", "<C-j>", "<C-w>j"},
+  {"n", "<C-k>", "<C-w>k"},
+  {"n", "<C-l>", "<C-w>l"},
+
+  -- Resize with arrows
+  {"n", "<C-Up>", ":resize -2<CR>"},
+  {"n", "<C-Down>", ":resize +2<CR>"},
+  {"n", "<C-Left>", ":vertical resize -2<CR>"},
+  {"n", "<C-Right>", ":vertical resize +2<CR>"},
+
+  -- Navigate buffers
+  {"n", "<S-l>", ":bnext<CR>"},
+  {"n", "<S-h>", ":bprevious<CR>"},
+
+  -- Move text up and down
+  {"n", "<A-j>", "<Esc>:m .+1<CR>==gi"},
+  {"n", "<A-k>", "<Esc>:m .-2<CR>==gi"},
+
+  -- Insert --
+  -- Press jk fast to exit insert mode 
+  {"i", "jk", "<ESC>"},
+
+  -- Visual --
+  -- Stay in indent mode
+  {"v", "<", "<gv"},
+  {"v", ">", ">gv"},
+
+  -- Move text up and down
+  {"v", "<A-j>", ":m .+1<CR>=="},
+  {"v", "<A-k>", ":m .-2<CR>=="},
+  {"v", "p", '"_dP'},
+
+  -- Visual Block --
+  -- Move text up and down
+  {"x", "J", ":move '>+1<CR>gv-gv"},
+  {"x", "K", ":move '<-2<CR>gv-gv"},
+  {"x", "<A-j>", ":move '>+1<CR>gv-gv"},
+  {"x", "<A-k>", ":move '<-2<CR>gv-gv"},
+
+  -- Custom keymaps
+  {"n", "<C-s>", "<cmd>:write<cr>"},
+
+}
+
+local function setKeymap(maps)
+  for _, map in pairs(maps) do
+    keymap(tostring(map[1]),tostring(map[2]),tostring(map[3]), opts )
+  end
+end
+
+
+setKeymap(mappings)
 -- Normal --
--- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
-
--- Resize with arrows
-keymap("n", "<C-Up>", ":resize -2<CR>", opts)
-keymap("n", "<C-Down>", ":resize +2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
-
--- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
-
--- Move text up and down
-keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
-keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
-
--- Insert --
--- Press jk fast to exit insert mode 
-keymap("i", "jk", "<ESC>", opts)
-
--- Visual --
--- Stay in indent mode
-keymap("v", "<", "<gv", opts)
-keymap("v", ">", ">gv", opts)
-
--- Move text up and down
-keymap("v", "<A-j>", ":m .+1<CR>==", opts)
-keymap("v", "<A-k>", ":m .-2<CR>==", opts)
-keymap("v", "p", '"_dP', opts)
-
--- Visual Block --
--- Move text up and down
-keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
-keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
-
--- Custom keymaps
-keymap("n", "<C-s>", "<cmd>:write<cr>", opts)
-keymap("n", "<C-x>", "<cmd>:q<cr>", opts)
 
 -- Terminal --
 -- Better terminal navigation
