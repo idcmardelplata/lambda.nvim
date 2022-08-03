@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 configs.setup({
-	ensure_installed = {'typescript', 'javascript', 'elixir', 'eex', 'html', 'css', 'scss', 'rust'}, -- one of "all" or a list of languages
+	ensure_installed = {"solidity", 'typescript', 'javascript', 'elixir', 'eex', 'html', 'css', 'scss', 'rust'}, -- one of "all" or a list of languages
 	ignore_install = { "" }, -- List of parsers to ignore installing
 	highlight = {
 		enable = true, -- false will disable the whole extension
