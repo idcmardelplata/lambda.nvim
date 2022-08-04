@@ -212,6 +212,12 @@ local gs = require("gitsigns")
    S = {"<cmd>:PackerStatus<cr>", "plugins status"},
  }
 
+ local markown = {
+   name = "Markdow",
+   p = {"<cmd>:Glow<cr>", "Preview in neovim"},
+   P = {"<cmd>:MarkdowPreview<cr>", "preview in tyhe browser"}
+ }
+
 
 
 
@@ -225,3 +231,4 @@ key.register(lsp, {prefix = "<leader>l"})
 key.register(test, {prefix = "<leader>t"})
 key.register(harpoon, {prefix = "<leader>m"})
 key.register(packer, {prefix = "<leader>p"})
+key.register(markown, {prefix = "<leader>M"})
