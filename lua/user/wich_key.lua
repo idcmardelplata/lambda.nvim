@@ -115,7 +115,7 @@ local gs = require("gitsigns")
    d = {gs.diffthis, "show diff in the file"},
    v = {"<cmd>DiffviewOpen<cr>", "show diff in any files"},
    c = {"<cmd>DiffviewClose<cr>", "close gitdiff"},
-   g = {"<cmd>Neogit kind=tab<cr>", "close gitdiff"},
+   g = {"<cmd>Neogit kind=tab<cr>", "Git management"},
  }
 
  -- TODO: Fix [e and ]e shortcuts
