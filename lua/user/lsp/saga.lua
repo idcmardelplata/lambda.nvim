@@ -1,9 +1,4 @@
-local is_ok, saga = pcall(require, "lspsaga")
-if not is_ok then
-  error("Error al cargar lspsaga")
-  return
-end
-
+local saga = SafeRequire( "lspsaga")
 
 
 -- use custom config

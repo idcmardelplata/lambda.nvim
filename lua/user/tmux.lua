@@ -1,8 +1,4 @@
-local is_ok, tmux = pcall(require, "tmux")
-if not is_ok  then
-  error("Error al cargar tmux")
-  return
-end
+local tmux = SafeRequire("tmux")
 
 tmux.setup {
 copy_sync = {

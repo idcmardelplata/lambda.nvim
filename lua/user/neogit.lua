@@ -1,8 +1,4 @@
-local is_ok, ngit = pcall(require, "neogit")
-if not is_ok then
-  error("Error al cargar neogit")
-  return
-end
+local ngit = SafeRequire("neogit")
 
 ngit.setup {
 disable_signs = false,

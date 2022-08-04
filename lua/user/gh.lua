@@ -1,7 +1,4 @@
-local is_ok, gh = pcall(require, "litee.gh")
-if not is_ok then
-  error("Error al cargar gh.nvim")
-end
+local gh = SafeRequire("litee.gh")
 
 gh.setup {
   -- deprecated, around for compatability for now.

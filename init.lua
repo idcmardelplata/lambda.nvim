@@ -1,6 +1,7 @@
 local subdir = "user"
 local config_files = {
   "options",
+  "utils",
   "keymaps",
   "plugins",
   "colorscheme",

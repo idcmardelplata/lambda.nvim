@@ -1,9 +1,4 @@
-local is_ok, harpoon = pcall(require, 'harpoon')
-
-if not is_ok  then
-  error("Error al cargar el plugin harpoon")
-  return
-end
+local harpoon = SafeRequire('harpoon')
 
 harpoon.setup {
   global_settings = {

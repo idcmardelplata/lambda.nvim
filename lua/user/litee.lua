@@ -1,8 +1,4 @@
-local is_ok, litee = pcall(require, "litee.lib")
-if not is_ok then
-  error("Error al cargar litee")
-  return
-end
+local litee = SafeRequire("litee.lib")
 
 litee.setup {
   tree = {

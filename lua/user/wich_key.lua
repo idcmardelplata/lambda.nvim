@@ -1,8 +1,4 @@
-local is_ok, key = pcall(require, "which-key")
-if not is_ok then
-  error("Error cargando wich-key")
-  return
-end
+local key = SafeRequire("which-key")
 
 key.setup {
 plugins = {

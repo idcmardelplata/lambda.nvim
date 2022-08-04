@@ -1,7 +1,4 @@
-local status_ok, configs = pcall(require, "nvim-treesitter.configs")
-if not status_ok then
-	return
-end
+local configs = SafeRequire("nvim-treesitter.configs")
 
 configs.setup({
 	ensure_installed = {"solidity", 'typescript', 'javascript', 'elixir', 'eex', 'html', 'css', 'scss', 'rust'}, -- one of "all" or a list of languages

@@ -1,8 +1,4 @@
-local is_ok, db = pcall(require, "dashboard")
-if not is_ok then
-  error("Error al cargar el dashboard")
-  return
-end
+local db = SafeRequire("dashboard")
 
 
 db.custom_header = {

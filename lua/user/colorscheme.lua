@@ -1,8 +1,4 @@
-local is_ok, onedark = pcall(require, "onedark")
-if not is_ok then
-  error("Error al cargar el theme onedark")
-  return
-end
+local onedark = SafeRequire("onedark")
 
 onedark.setup {
  style = 'deep', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'

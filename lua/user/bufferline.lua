@@ -1,8 +1,4 @@
-local is_ok, buf = pcall(require, "bufferline")
-if not is_ok then
-  error("Error al cargar bufferline")
-  return
-end
+local buf = SafeRequire("bufferline")
 
 buf.setup {
         options = {

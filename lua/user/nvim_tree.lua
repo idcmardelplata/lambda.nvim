@@ -1,8 +1,4 @@
-local is_ok, ntree = pcall(require, "nvim-tree")
-if not is_ok then
-  error("Error al cargar nvim-tree")
-  return
-end
+local ntree = SafeRequire("nvim-tree")
 
 ntree.setup {
       auto_reload_on_write = true,

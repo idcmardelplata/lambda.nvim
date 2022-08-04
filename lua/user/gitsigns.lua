@@ -1,8 +1,4 @@
-local is_ok, gitsigns = pcall(require, "gitsigns")
-if not is_ok then
-  error("Error al cargar gitsigns")
-end
-
+local gitsigns = SafeRequire("gitsigns")
 gitsigns.setup {
   signs = {
     add          = {hl = 'GitSignsAdd'   , text = '│', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'},

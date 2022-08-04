@@ -1,8 +1,4 @@
-local is_ok, neotest = pcall(require, "neotest")
-if not is_ok then
-  error("Error al cargar neotest")
-  return
-end
+local neotest = SafeRequire("neotest")
 
 neotest.setup {
   adapters = {
