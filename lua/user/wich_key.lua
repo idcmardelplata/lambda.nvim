@@ -215,7 +215,7 @@ local gs = require("gitsigns")
  local markown = {
    name = "Markdow",
    p = {"<cmd>:Glow<cr>", "Preview in neovim"},
-   P = {"<cmd>:MarkdowPreview<cr>", "preview in tyhe browser"}
+   P = {"<cmd>:MarkdownPreview<cr>", "preview in the browser"}
  }
 
 
