@@ -145,6 +145,9 @@ return packer.startup(function(use)
   -- Harpoon
   use {  'ThePrimeagen/harpoon', requires = 'nvim-lua/plenary.nvim' }
 
+  -- Glow (show markdown preview inside neovim)
+  use {"ellisonleao/glow.nvim", ft={"markdown", "md"}}
+
   if PACKER_BOOTSTRAP  then
     require("packer").PackerSync()
   end
