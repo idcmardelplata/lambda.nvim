@@ -81,14 +81,14 @@ local opts = {
 
 local files = {
   name = "Files",
+  n = {"<cmd>:DashboardNewFile<cr>", "create new file"},
+  h = {"<cmd>new<cr>", "create new buffer in horizontal"},
+  v = {"<cmd>:vnew<cr>", "create new buffer in vertical"},
   f = {"<cmd>lua require('telescope.builtin').find_files( require('telescope.themes').get_dropdown({previewer = false}))<cr>", "find files"},
-  r = {"<cmd>Telescope live_grep<cr>", "search any world"},
-  c = {"<cmd>new<cr>", "create new file"},
+  g = {"<cmd>Telescope live_grep<cr>", "search any world"},
   x = {"<cmd>:quit<cr>", "close current buffer"},
   s = {"<cmd>:write<cr>", "write changes"},
   e = {"<cmd>:NvimTreeToggle<cr>", "show tree"},
-  S = {"<cmd>:new<cr>", "create new buffer in horizontal"},
-  V = {"<cmd>:vnew<cr>", "create new buffer in vertical"},
 }
 
 local gs = require("gitsigns")
@@ -131,7 +131,7 @@ local gs = require("gitsigns")
    s = {require("lspsaga.signaturehelp").signature_help, "show signature and doc"},
    r = {require("lspsaga.rename").lsp_rename, "rename identifiers"},
    p = {require("lspsaga.definition").preview_definition, "preview definition"},
-   d = {require("lspsaga.diagnostic").show_line_diagnostics, "show inline diagnostics"}, 
+   d = {require("lspsaga.diagnostic").show_line_diagnostics, "show inline diagnostics"},
    ["[e"] = {require("lspsaga.diagnostic").goto_prev, "goto previous error"},
    ["]e"] = {require("lspsaga.diagnostic").goto_next, "goto next error"},
    ["[E"] = {require("lspsaga.diagnostic").goto_prev{severity = vim.diagnostic.severity.ERROR}, "goto previous error"},
@@ -197,6 +197,15 @@ local gs = require("gitsigns")
    },
  }
 
+ local harpoon = {
+   name = "Harpoon",
+   m = {require('harpoon.mark').add_file, "mark file"},
+   o = {require("harpoon.ui").toggle_quick_menu, "open marks"},
+   n = {require("harpoon.ui").nav_next, "next mark"},
+   p = {require("harpoon.ui").nav_prev, "prev mark"},
+   t = { function() require("harpoon.tmux").gotoTerminal(1) end, "go to first tmux terminal"}
+ }
+
 
 
 
@@ -210,3 +219,4 @@ key.register(git, { prefix = "<leader>g"})
 key.register(github, { prefix = "<leader>h"})
 key.register(lsp, {prefix = "<leader>l"})
 key.register(test, {prefix = "<leader>t"})
+key.register(harpoon, {prefix = "<leader>m"})
