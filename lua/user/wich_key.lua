@@ -207,6 +207,14 @@ local gs = require("gitsigns")
  }
 
 
+ local packer = {
+   name = "Packer",
+   s = {"<cmd>:PackerSync<cr>", "sync plugins"},
+   c = {"<cmd>:PackerClean<cr>", "clean plugins"},
+   i = {"<cmd>:PackerInstall<cr>", "install plugins"},
+   l = {"<cmd>:PackerLoad ", "load plugin"},
+   S = {"<cmd>:PackerStatus<cr>", "plugins status"},
+ }
 
 
 
@@ -220,3 +228,4 @@ key.register(github, { prefix = "<leader>h"})
 key.register(lsp, {prefix = "<leader>l"})
 key.register(test, {prefix = "<leader>t"})
 key.register(harpoon, {prefix = "<leader>m"})
+key.register(packer, {prefix = "<leader>p"})
