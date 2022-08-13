@@ -1,8 +1,14 @@
 local neotest = SafeRequire("neotest")
 
+-- local function load_according_filetype(filetype, plugin_name, config)
+--   if vim.bo.filetype == filetype then
+--     require(tostring(plugin_name))(config)
+--   end
+-- end
+
 neotest.setup {
   adapters = {
-    require("neotest-python")({
+    Load_according_filetype("python", "neotest-python", {
       -- Extra arguments for nvim-dap configuration
       dap = { justMyCode = false },
       -- Command line arguments for runner
@@ -18,19 +24,20 @@ neotest.setup {
       --   ...
       -- end,
     }),
-    require("neotest-jest")({
+
+    Load_according_filetype("javascript", "neotest-jest", {
       jestCommand = "npm test --",
       jestConfigFile = "jest.config.ts",
       env = { CI = true},
     }),
-     require("neotest-rust")
+    Load_according_filetype("rust", "neotest-rust", {})
   }
 }
 
 -- Set keymaps for running test functions
 
-local keymap = vim.api.nvim_set_keymap
-local opts = {noremap = true, silent = true}
+-- local keymap = vim.api.nvim_set_keymap
+-- local opts = {noremap = true, silent = true}
 
 
 -- Jump to the next failed test

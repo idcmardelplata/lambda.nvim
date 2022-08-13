@@ -107,9 +107,9 @@ return packer.startup(function(use)
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
       "antoinemadec/FixCursorHold.nvim",
-      "haydenmeade/neotest-jest",
-      "nvim-neotest/neotest-python",
-      "rouge8/neotest-rust",
+      {"haydenmeade/neotest-jest", ft={"javascript","typescript"}},
+      { "nvim-neotest/neotest-python", ft="python" },
+      { "rouge8/neotest-rust", ft="rust" },
     }}
 
   -- Neogit

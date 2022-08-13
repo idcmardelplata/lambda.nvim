@@ -7,3 +7,9 @@ function SafeRequire(modname)
     return mod
   end
 end
+
+function Load_according_filetype(filetype, plugin_name, config)
+  if vim.bo.filetype == filetype then
+    require(tostring(plugin_name))(config)
+  end
+end
