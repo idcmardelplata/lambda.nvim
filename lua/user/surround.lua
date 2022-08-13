@@ -1,7 +1,7 @@
 local surround = SafeRequire("nvim-surround")
 
 surround.setup {
-    highlight_motion = { -- Disables highlights
+    highlight = { -- Disables highlights
         duration = false,
     },
 }
