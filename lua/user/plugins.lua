@@ -110,6 +110,7 @@ return packer.startup(function(use)
       {"haydenmeade/neotest-jest", ft={"javascript","typescript"}},
       { "nvim-neotest/neotest-python", ft="python" },
       { "rouge8/neotest-rust", ft="rust" },
+      {"nvim-neotest/neotest-vim-test", requires = "vim-test/vim-test"}, -- Suport many test runners
     }}
 
   -- Neogit

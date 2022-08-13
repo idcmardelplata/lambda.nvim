@@ -30,7 +30,8 @@ neotest.setup {
       jestConfigFile = "jest.config.ts",
       env = { CI = true},
     }),
-    Load_according_filetype("rust", "neotest-rust", {})
+    Load_according_filetype("rust", "neotest-rust", {}),
+    require("neotest-vim-test")({ allow_file_types = {"elixir"}}),
   }
 }
 
