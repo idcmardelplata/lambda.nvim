@@ -148,6 +148,9 @@ return packer.startup(function(use)
 
   -- Glow (show markdown preview inside neovim)
   use {"ellisonleao/glow.nvim", ft={"markdown", "md"}}
+  
+  use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
+
 
   if PACKER_BOOTSTRAP  then
     require("packer").PackerSync()
