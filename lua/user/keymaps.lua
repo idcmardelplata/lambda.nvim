@@ -60,6 +60,14 @@ local mappings = {
   {"x", "<A-j>", ":move '>+1<CR>gv-gv"},
   {"x", "<A-k>", ":move '<-2<CR>gv-gv"},
 
+  -- Terminal keymappings
+  {"t", "<C-h>", "<C-\\><C-N><C-w>h"},
+  {"t", "<C-j>", "<C-\\><C-N><C-w>j"},
+  {"t", "<C-k>", "<C-\\><C-N><C-w>k"},
+  {"t", "<C-l>", "<C-\\><C-N><C-w>l"},
+  {"t", "jk", "<C-\\><C-N>"},
+  {"t", "<Esc>", "<C-\\><C-N>"},
+
   -- Custom keymaps
   {"n", "<C-s>", "<cmd>:write<cr>"},
 
@@ -77,7 +85,3 @@ setKeymap(mappings)
 
 -- Terminal --
 -- Better terminal navigation
--- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
--- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
--- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
--- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)

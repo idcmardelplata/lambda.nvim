@@ -218,6 +218,13 @@ local gs = require("gitsigns")
    P = {"<cmd>:MarkdownPreview<cr>", "preview in the browser"}
  }
 
+ local terminal = {
+   name = "Terminal",
+   v = {"<cmd>:vsplit | term<cr>", "open terminal in vertical"},
+   s = {"<cmd>:split | term<cr>", "open terminal in horizontal"},
+   f = {"<cmd>:term<cr>", "open terminal in full"},
+ }
+
 
 
 
@@ -232,3 +239,4 @@ key.register(test, {prefix = "<leader>t"})
 key.register(harpoon, {prefix = "<leader>m"})
 key.register(packer, {prefix = "<leader>p"})
 key.register(markown, {prefix = "<leader>M"})
+key.register(terminal, {prefix = "<C-t>"});
