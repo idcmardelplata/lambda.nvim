@@ -148,8 +148,13 @@ return packer.startup(function(use)
 
   -- Glow (show markdown preview inside neovim)
   use {"ellisonleao/glow.nvim", ft={"markdown", "md"}}
-  
+
   use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
+
+  use{'simrat39/rust-tools.nvim',
+    requires = {'neovim/nvim-lspconfig', 'nvim-lua/plenary.nvim'},
+    ft = "rust"
+  }
 
 
   if PACKER_BOOTSTRAP  then

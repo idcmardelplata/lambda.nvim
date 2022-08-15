@@ -26,6 +26,7 @@ local config_files = {
   "gh",
   "harpoon",
   "ufo",
+  "rust-tools"
 }
 
 for _ , file  in ipairs(config_files ) do

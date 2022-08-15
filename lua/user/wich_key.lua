@@ -218,6 +218,13 @@ local gs = require("gitsigns")
    P = {"<cmd>:MarkdownPreview<cr>", "preview in the browser"}
  }
 
+ local rust = {
+   name = "Rust",
+   r = {"<cmd>RustRun<cr>", "Cargo run"},
+   a = {"<cmd>RustEmitAsm<cr>", "Show the asm code"},
+   -- c = {require("rust-tools.open_cargo_toml").open_cargo_toml, "Open cargo.toml"},
+ }
+
  local terminal = {
    name = "Terminal",
    v = {"<cmd>:vsplit | term<cr>", "open terminal in vertical"},
@@ -240,3 +247,4 @@ key.register(harpoon, {prefix = "<leader>m"})
 key.register(packer, {prefix = "<leader>p"})
 key.register(markown, {prefix = "<leader>M"})
 key.register(terminal, {prefix = "<C-t>"});
+key.register(rust, {prefix = "<leader>r"})
