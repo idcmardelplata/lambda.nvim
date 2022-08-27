@@ -178,4 +178,7 @@ que es el encargado de importar todos los archivos de configuracion del editor.
 
 Si te sirve o te gusta lambda vim, te invito a colaborar mediante issues o pull request **¡todas son bienvenidas! :)**
 
+Si te gusta y te sirvió de algo está config y me querés regañar un coffee, podés hacerlo desde 
+https://cafecito.app/idcmardelplata :)
+
 happy coding :) :)
