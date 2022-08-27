@@ -118,7 +118,62 @@ Estos mapeos de teclados son generales y no estan atados a ningun plugin en part
  **```<C-Space>```** limpia el resaltado de busqueda
 
 
-Los mapeos para los plugins estan todos visibles en wich-key.
+**Los mapeos para los plugins estan todos visibles en wich-key.**
+
+
+
+
+# Estructura de **lambda.nvim**
+
+La estructura que seguimos es bastante sencilla, tenemos un fichero inicial llamado **init.lua**
+que es el encargado de importar todos los archivos de configuracion del editor.
+
+### Gestion de plugins.
+  1) Todos los plugins se instalan o eliminan mediante el fichero **user/plugins.lua**
+
+  2) Una vez configurado el plugin simplemente hay que guardar el archivo y los plugins se instalaran automaticamente.
+
+  3) Para personalizar la configuracion de un plugin simplemente hay que crear un fichero dentro de **user/< pluginname >.lua** con el siguiente formato:
+
+  ```lua
+      local plugin_name = SafeRequire("pluginname")
+
+      pluginname.setup {
+          -- Configurar aqui las opciones deseadas
+        }
+  ```
+  4) Agregar el nombre del fichero de configuracion del plugin antes creado a la lista de plugins de **init.lua**
+
+  ```lua
+  local subdir = "user"
+  local config_files = {
+    "options",
+    "utils",
+    "keymaps",
+    "plugins",
+    "...",
+    "your_plugin_config_here"
+  }
+
+  ```
+  5) Si desea crear sus propios mapeos de teclado para el plugin, puede hacerlo editando el fichero **user/wich_key.lua**,
+  Primero genere un diccionario con los mapeos que desee agregar, ej: 
+
+  ```lua
+    local custom_menu_name = {
+      name = "custom_name_to_show_in_wich_key",
+      n = {"<cmd>:DashboardNewFile<cr>", "create new file"},
+      h = {"<cmd>new<cr>", "create new buffer in horizontal"},
+      v = {"<cmd>:vnew<cr>", "create new buffer in vertical"},
+      f = {....},
+    }
+     -- Al final del fichero debe registrarlo
+     key.register(custom_menu_name, { prefix = "<leader>k"})
+
+  ```
+
+ 6) Done :)
+
 
 
 Si te sirve o te gusta lambda vim, te invito a colaborar mediante issues o pull request **¡todas son bienvenidas! :)**
