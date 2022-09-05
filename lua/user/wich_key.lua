@@ -80,7 +80,7 @@ local files = {
   n = {"<cmd>:DashboardNewFile<cr>", "create new file"},
   h = {"<cmd>new<cr>", "create new buffer in horizontal"},
   v = {"<cmd>:vnew<cr>", "create new buffer in vertical"},
-  f = {"<cmd>lua require('telescope.builtin').find_files( require('telescope.themes').get_dropdown({previewer = false}))<cr>", "find files"},
+  f = {"<cmd>lua require('telescope.builtin').find_files( require('telescope.themes').get_dropdown({previewer = false}), {hidden = true})<cr>", "find files"},
   g = {"<cmd>Telescope live_grep<cr>", "search any world"},
   x = {"<cmd>:quit<cr>", "close current buffer"},
   s = {"<cmd>:write<cr>", "write changes"},
@@ -233,10 +233,17 @@ local gs = require("gitsigns")
  }
 
 
-
-
 -- local db = {}
--- local telescope = {}
+local telescope = {
+  e = {"<cmd>:Telescope emoji<cr>", "find emojis"},
+  m = {"<cmd>:Telescope media_files<cr>", "find images"},
+  c = {"<cmd>:Telescope commands<cr>", "show commands"},
+  h = {"<cmd>:Telescope command_history<cr>", "command history"},
+  d = {"<cmd>:Telescope diagnostics<cr>", "show diagnostics"},
+  s = {"<cmd>:Telescope lsp_workspace_symbols<cr>", "show symbols"},
+  r = {"<cmd>:Telescope lsp_references<cr>", "show references"},
+  q = {"<cmd>:Telescope quickfix<cr>", "show quickfix"},
+}
 
 key.register(files, { prefix = "<leader>f"})
 key.register(git, { prefix = "<leader>g"})
@@ -248,3 +255,4 @@ key.register(packer, {prefix = "<leader>p"})
 key.register(markown, {prefix = "<leader>M"})
 key.register(terminal, {prefix = "<C-t>"});
 key.register(rust, {prefix = "<leader>r"})
+key.register(telescope, {prefix = "<leader>T"})
