@@ -19,7 +19,6 @@ local config_files = {
   "nvim_tree",
   "bufferline",
   "feline_bar",
-  "lsp",
   "wich_key",
   "surround",
   "litee",
