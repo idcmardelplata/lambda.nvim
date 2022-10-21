@@ -121,17 +121,26 @@ local gs = require("gitsigns")
  -- TODO: Fix [e and ]e shortcuts
  local lsp = {
    name = "Lsp",
-   a = {function() require("lspsaga.codeaction").code_action(opts) end, "code action"},
-   f = {require("lspsaga.finder").lsp_finder, "find definitions and references"},
-   o = {require("lspsaga.hover").render_hover_doc, "show documentation"},
-   s = {vim.lsp.buf.signature_help, "show signature and doc."},
-   r = {require("lspsaga.rename").lsp_rename, "rename identifiers"},
-   p = {require("lspsaga.definition").preview_definition, "preview definition"},
-   d = {require("lspsaga.diagnostic").show_line_diagnostics, "show inline diagnostics"},
-   ["[e"] = {require("lspsaga.diagnostic").goto_prev, "goto previous error"},
-   ["]e"] = {require("lspsaga.diagnostic").goto_next, "goto next error"},
-   ["[E"] = {require("lspsaga.diagnostic").goto_prev{severity = vim.diagnostic.severity.ERROR}, "goto previous error"},
-   ["]E"] = {require("lspsaga.diagnostic").goto_next{severity = vim.diagnostic.severity.ERROR}, "goto previous error"},
+   -- a = {function() require("lspsaga.codeaction").code_action(opts) end, "code action"},
+
+   f = {"<cmd>Telescope lsp_references<cr>", "find references"},
+   d = {"<cmd>Telescope lsp_type_definitions<cr>", "type definitions"},
+   p = {"<cmd>Telescope lsp_definitions<cr>", "show definition"},
+   s = {"<cmd>Telescope lsp_document_symbols<cr>", "show symbols"},
+   w = {"<cmd>Telescope lsp_workspace_symbols<cr>", "show symbols in workspace"},
+   D = {"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "dynamic symbols"},
+   i = {"<cmd>Telescope lsp_implementations<cr>", "implementations"},
+
+
+   --o = {require("lspsaga.hover").render_hover_doc, "show documentation"},
+   -- s = {vim.lsp.buf.signature_help, "show signature and doc."},
+   -- r = {require("lspsaga.rename").lsp_rename, "rename identifiers"},
+   --p = {require("lspsaga.definition").preview_definition, "preview definition"},
+   -- d = {require("lspsaga.diagnostic").show_line_diagnostics, "show inline diagnostics"},
+   -- ["[e"] = {require("lspsaga.diagnostic").goto_prev, "goto previous error"},
+   -- ["]e"] = {require("lspsaga.diagnostic").goto_next, "goto next error"},
+   -- ["[E"] = {require("lspsaga.diagnostic").goto_prev{severity = vim.diagnostic.severity.ERROR}, "goto previous error"},
+   -- ["]E"] = {require("lspsaga.diagnostic").goto_next{severity = vim.diagnostic.severity.ERROR}, "goto previous error"},
  }
 
  local test = {
