@@ -252,7 +252,11 @@ local telescope = {
   s = {"<cmd>:Telescope lsp_workspace_symbols<cr>", "show symbols"},
   r = {"<cmd>:Telescope lsp_references<cr>", "show references"},
   q = {"<cmd>:Telescope quickfix<cr>", "show quickfix"},
+  g = {"<cmd>:Telescope grep_string<cr>", "grep strings"},
+  l = {"<cmd>:Telescope live_grep<cr>", "live grep"},
+
 }
+
 
 key.register(files, { prefix = "<leader>f"})
 key.register(git, { prefix = "<leader>g"})
