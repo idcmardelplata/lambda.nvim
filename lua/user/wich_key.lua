@@ -130,6 +130,7 @@ local gs = require("gitsigns")
    w = {"<cmd>Telescope lsp_workspace_symbols<cr>", "show symbols in workspace"},
    D = {"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "dynamic symbols"},
    i = {"<cmd>Telescope lsp_implementations<cr>", "implementations"},
+   e = {require("lspsaga.diagnostic").show_line_diagnostics, "show inline diagnostics"},
 
 
    --o = {require("lspsaga.hover").render_hover_doc, "show documentation"},
