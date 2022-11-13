@@ -2,7 +2,19 @@ local lsp_installer = SafeRequire("nvim-lsp-installer")
 
 local lspconfig = require("lspconfig")
 
-local servers = { "solidity_ls",  "marksman",  "emmet_ls", "jsonls", "yamlls", "sumneko_lua", "rust_analyzer", "denols", "tsserver", "elixirls", "html" }
+local servers = { "solidity_ls",
+  "marksman",
+  "emmet_ls",
+  "jsonls",
+  "yamlls",
+  "sumneko_lua",
+  "rust_analyzer",
+  "denols",
+  "tsserver",
+  "elixirls",
+  "html",
+  "jedi_language_server",
+}
 
 lsp_installer.setup({
 	ensure_installed = servers,

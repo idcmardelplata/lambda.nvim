@@ -12,7 +12,6 @@ local config_files = {
   "autopairs",
   "comments",
   "tmux",
-  "neotest",
   "neogit",
   "dashboard",
   "gitsigns",

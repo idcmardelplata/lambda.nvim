@@ -144,18 +144,6 @@ local gs = require("gitsigns")
    -- ["]E"] = {require("lspsaga.diagnostic").goto_next{severity = vim.diagnostic.severity.ERROR}, "goto previous error"},
  }
 
- local test = {
-   name = "Testing",
-   n = { function() require("neotest").jump.next({status = 'failed'}) end, "jump next failed test"},
-   p = { function() require("neotest").jump.prev({status = 'failed'} )end, "jump next failed test"},
-   s = {function() require("neotest").summary.toggle() end, "test summary"},
-   a = {function() require('neotest').run.attach({}) end, "attach to the current test runner"},
-   S = {function() require('neotest').run.stop({}) end, "stop test" },
-   r = {function() require('neotest').run.run()  end, "run current test" },
-   l = {function() require('neotest').run.run_last()  end, "run last test" },
-   o = {function() require('neotest').output.open({enter = true, short = true}) end, "open test output"},
-   R = {function() require('neotest').run.run(vim.fn.expand('%')) end, "run all test in this file"},
- }
 
  local github = {
    name = "Github",
@@ -263,7 +251,6 @@ key.register(files, { prefix = "<leader>f"})
 key.register(git, { prefix = "<leader>g"})
 key.register(github, { prefix = "<leader>h"})
 key.register(lsp, {prefix = "<leader>l"})
-key.register(test, {prefix = "<leader>t"})
 key.register(harpoon, {prefix = "<leader>m"})
 key.register(packer, {prefix = "<leader>p"})
 key.register(markown, {prefix = "<leader>M"})

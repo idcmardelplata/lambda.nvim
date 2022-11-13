@@ -100,18 +100,6 @@ return packer.startup(function(use)
   -- Tmux navigation
   use({ "aserowy/tmux.nvim"})
 
-  -- Neotest
-  use {
-  "nvim-neotest/neotest",
-  requires = {
-      "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
-      "antoinemadec/FixCursorHold.nvim",
-      {"haydenmeade/neotest-jest", ft={"javascript","typescript"}},
-      { "nvim-neotest/neotest-python", ft="python" },
-      { "rouge8/neotest-rust", ft="rust" },
-      {"nvim-neotest/neotest-vim-test", requires = "vim-test/vim-test"}, -- Suport many test runners
-    }}
 
   -- Neogit
   use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim', 'sindrets/diffview.nvim' }
@@ -155,6 +143,8 @@ return packer.startup(function(use)
     requires = {'neovim/nvim-lspconfig', 'nvim-lua/plenary.nvim'},
     ft = "rust"
   }
+
+  use {'autozimu/LanguageClient-neovim', branch="next", run="bash install.sh"}
 
 
   if PACKER_BOOTSTRAP  then
