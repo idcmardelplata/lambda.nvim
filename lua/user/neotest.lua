@@ -4,6 +4,6 @@ neotest.setup  {
    adapters = {
      require("neotest-jest"),
      require("neotest-elixir"),
-     require("neotest-rust")
+     require("neotest-rust"),
   }
 }

@@ -124,8 +124,9 @@ return packer.startup(function(use)
     "nvim-lua/plenary.nvim",
     "nvim-treesitter/nvim-treesitter",
     "antoinemadec/FixCursorHold.nvim",
+    }
   }
-  }
+
 
   use {"rouge8/neotest-rust",  requires={"nvim-neotest/neotest", "nvim-lua/plenary.nvim" }}
   use { "jfpedroza/neotest-elixir",requires={"nvim-neotest/neotest", "nvim-lua/plenary.nvim"}}
