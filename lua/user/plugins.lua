@@ -119,7 +119,17 @@ return packer.startup(function(use)
   -- feline bar
   use { 'feline-nvim/feline.nvim', branch = '0.5-compat' }
 
+  use {"nvim-neotest/neotest",
+  requires = {
+    "nvim-lua/plenary.nvim",
+    "nvim-treesitter/nvim-treesitter",
+    "antoinemadec/FixCursorHold.nvim",
+  }
+  }
 
+  use {"rouge8/neotest-rust",  requires={"nvim-neotest/neotest", "nvim-lua/plenary.nvim" }}
+  use { "jfpedroza/neotest-elixir",requires={"nvim-neotest/neotest", "nvim-lua/plenary.nvim"}}
+  use { "haydenmeade/neotest-jest", requires={"nvim-neotest/neotest", "nvim-lua/plenary.nvim"}}
 
   -- wich key
   use { "folke/which-key.nvim", commit = "bd4411a2ed4dd8bb69c125e339d837028a6eea71" }
@@ -145,7 +155,6 @@ return packer.startup(function(use)
   }
 
   use {'autozimu/LanguageClient-neovim', branch="next", run="bash install.sh"}
-
 
   if PACKER_BOOTSTRAP  then
     require("packer").PackerSync()
