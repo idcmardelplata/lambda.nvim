@@ -246,6 +246,15 @@ local telescope = {
 
 }
 
+local neotest = {
+  t = {"<cmd>:lua require('neotest').run.run()<cr>", "run test"},
+  f = {"<cmd>:lua require('neotest').run.run(vim.fn.expand('%'))<cr>", "run test file"},
+  d = {"<cmd>:lua require('neotest').run.stop()<cr>", "stop current test"},
+  a = {"<cmd>:lua require('neotest').run.attach()<cr>", "attach to the last test" },
+  s = {"<cmd>:lua require('neotest').summary.toggle()<cr>", "Open tests summary" },
+
+}
+
 
 key.register(files, { prefix = "<leader>f"})
 key.register(git, { prefix = "<leader>g"})
@@ -257,3 +266,4 @@ key.register(markown, {prefix = "<leader>M"})
 key.register(terminal, {prefix = "<C-t>"});
 key.register(rust, {prefix = "<leader>r"})
 key.register(telescope, {prefix = "<leader>T"})
+key.register(neotest, {prefix = "<leader>t"})
