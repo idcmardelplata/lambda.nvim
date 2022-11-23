@@ -71,6 +71,8 @@ local mappings = {
   -- Custom keymaps
   {"n", "<C-s>", "<cmd>:write<cr>"},
   {"n", "<C-Space>", "<cmd>:nohl<cr>"},
+  {"n", "-q", "<cmd>:close<cr>"},
+
 
 }
 
