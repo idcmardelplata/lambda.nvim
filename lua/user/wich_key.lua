@@ -233,6 +233,7 @@ local gs = require("gitsigns")
 
 -- local db = {}
 local telescope = {
+  name = "Telescope",
   e = {"<cmd>:Telescope emoji<cr>", "find emojis"},
   m = {"<cmd>:Telescope media_files<cr>", "find images"},
   c = {"<cmd>:Telescope commands<cr>", "show commands"},
@@ -243,10 +244,12 @@ local telescope = {
   q = {"<cmd>:Telescope quickfix<cr>", "show quickfix"},
   g = {"<cmd>:Telescope grep_string<cr>", "grep strings"},
   l = {"<cmd>:Telescope live_grep<cr>", "live grep"},
+  o = {"<cmd>:lua vim.lsp.buf.hover()<cr>", "display information"},
 
 }
 
 local neotest = {
+  name = "Neotest",
   t = {"<cmd>:lua require('neotest').run.run()<cr>", "run test"},
   f = {"<cmd>:lua require('neotest').run.run(vim.fn.expand('%'))<cr>", "run test file"},
   d = {"<cmd>:lua require('neotest').run.stop()<cr>", "stop current test"},
