@@ -256,6 +256,13 @@ local neotest = {
 
 }
 
+local database = {
+  name = "Database",
+  c = {"<cmd>DBUIAddConnection<CR>", "create new connection"},
+  t = {"<cmd>DBUIToggle<CR>", "Toggle DBUI"},
+  l = {"<cmd>DBUILastQueryInfo<CR>", "Last query info"},
+}
+
 
 key.register(files, { prefix = "<leader>f"})
 key.register(git, { prefix = "<leader>g"})
@@ -268,3 +275,4 @@ key.register(terminal, {prefix = "<C-t>"});
 key.register(rust, {prefix = "<leader>r"})
 key.register(telescope, {prefix = "<leader>T"})
 key.register(neotest, {prefix = "<leader>t"})
+key.register(database, {prefix = "<leader>d"})

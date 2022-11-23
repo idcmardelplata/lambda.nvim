@@ -108,7 +108,8 @@ return packer.startup(function(use)
   use {'glepnir/dashboard-nvim'}
 
   -- dadbod for database management
-  use {'tpope/vim-dadbod', 'kristijanhusak/vim-dadbod-ui'}
+  use {"tpope/vim-dadbod"}
+  use {'kristijanhusak/vim-dadbod-ui', afer="tpope/vim-dadbod", requires="tpope/vim-dadbod"}
 
   -- Nvim Tree
   use { 'kyazdani42/nvim-tree.lua', requires = { 'kyazdani42/nvim-web-devicons'}}
