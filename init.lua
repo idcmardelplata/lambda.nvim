@@ -6,7 +6,7 @@ local config_files = {
   "plugins",
   "colorscheme",
   "cmp",
-  "lsp",
+  "mason_conf",
   "telescope",
   "treesitter",
   "autopairs",
