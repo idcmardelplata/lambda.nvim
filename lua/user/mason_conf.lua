@@ -55,18 +55,24 @@ require("lspconfig").sumneko_lua.setup {
   }
 }
 
-require("lspconfig").rust_analyzer.setup {}
-require("lspconfig").denols.setup {}
+-- require("lspconfig").denols.setup {}
 
 
--- FIX: use autocommand for filetype detection and load the correct lsp-server
 
--- require("mason-lspconfig").setup_handlers = {
--- -- mason_config.setup_handlers = {
---   function (server_name)
---     require("lspconfig")[server_name].setup()
---   end,
---   ["rust_analyzer"] = function ()
---     require("rust-tools").setup()
---   end
--- }
+local group = vim.api.nvim_create_augroup("MasonLspGroup", {clear = true})
+
+vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
+  group = group,
+  pattern = {"*.rs"},
+  callback = function ()
+    require("lspconfig").rust_analyzer.setup {}
+  end
+})
+
+vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
+  group = group,
+  pattern = {"*.js", "*.ts"},
+  callback = function ()
+    require("lspconfig").tsserver.setup {}
+  end
+})
