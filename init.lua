@@ -20,12 +20,11 @@ local config_files = {
   "feline_bar",
   "wich_key",
   "surround",
-  "litee",
-  "gh",
   "harpoon",
   "ufo",
   "rust-tools",
-  "neotest"
+  "neotest",
+  "octo_conf"
 }
 
 for _ , file  in ipairs(config_files ) do

@@ -140,9 +140,14 @@ return packer.startup(function(use)
   -- nvim-surround
   use({ "kylechui/nvim-surround"})
 
-  -- gh.nvim (support for github integration)
-  use { 'ldelossa/gh.nvim', requires = { { 'ldelossa/litee.nvim' } } }
-
+  -- Github integration
+  use {
+  'pwntester/octo.nvim',
+  requires = {
+    'nvim-lua/plenary.nvim',
+    'nvim-telescope/telescope.nvim',
+    'kyazdani42/nvim-web-devicons',
+  }}
 
   -- Harpoon
   use {  'ThePrimeagen/harpoon', requires = 'nvim-lua/plenary.nvim' }

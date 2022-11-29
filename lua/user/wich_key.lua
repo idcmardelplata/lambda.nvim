@@ -145,51 +145,95 @@ local gs = require("gitsigns")
  }
 
 
- local github = {
+ local octo = {
    name = "Github",
-   c = {
-     name = "+commits",
-     c = { "<cmd>GHCloseCommit<cr>", "Close" },
-     e = { "<cmd>GHExpandCommit<cr>", "Expand" },
-     o = { "<cmd>GHOpenToCommit<cr>", "Open To" },
-     p = { "<cmd>GHPopOutCommit<cr>", "Pop Out" },
-     z = { "<cmd>GHCollapseCommit<cr>", "Collapse" },
-   },
    i = {
-     name = "+issues",
-     p = { "<cmd>GHPreviewIssue<cr>", "Preview" },
-   },
-   l = {
-     name = "+litee",
-     t = { "<cmd>LTPanel<cr>", "Toggle Panel" },
-   },
-   r = {
-     name = "+review",
-     b = { "<cmd>GHStartReview<cr>", "Begin" },
-     c = { "<cmd>GHCloseReview<cr>", "Close" },
-     d = { "<cmd>GHDeleteReview<cr>", "Delete" },
-     e = { "<cmd>GHExpandReview<cr>", "Expand" },
-     s = { "<cmd>GHSubmitReview<cr>", "Submit" },
-     z = { "<cmd>GHCollapseReview<cr>", "Collapse" },
+     name = "issues",
+     c = { "<cmd>:Octo issue close<cr>", "close issue" },
+     r = { "<cmd>:Octo issue reopen<cr>", "reopen issue" },
+     R = { "<cmd>:Octo issue reload<cr>", "reload issue" },
+     e = { "<cmd>:Octo issue edit", "edit issue" },
+     l = { "<cmd>:Octo issue list<cr>", "list issues" },
+     s = { "<cmd>:Octo issue search<cr>", "search issues" },
+     b = { "<cmd>:Octo issue browser<cr>", "issues browser" },
+     u = { "<cmd>:Octo issue url<cr>", "copy url of issue" },
    },
    p = {
-     name = "+pull Request",
-     c = { "<cmd>GHClosePR<cr>", "Close" },
-     d = { "<cmd>GHPRDetails<cr>", "Details" },
-     e = { "<cmd>GHExpandPR<cr>", "Expand" },
-     o = { "<cmd>GHOpenPR<cr>", "Open" },
-     p = { "<cmd>GHPopOutPR<cr>", "PopOut" },
-     r = { "<cmd>GHRefreshPR<cr>", "Refresh" },
-     t = { "<cmd>GHOpenToPR<cr>", "Open To" },
-     z = { "<cmd>GHCollapsePR<cr>", "Collapse" },
+     name = "pull requests",
+     l = {"<cmd>:Octo pr list<cr>", "List all prs"},
+     s = {"<cmd>:Octo pr search<cr>", "search prs"},
+     r = {"<cmd>:Octo pr reopen<cr>", "reopen current pr"},
+     c = {"<cmd>:Octo pr create<cr>", "create pr from the current branch"},
+     C = {"<cmd>:Octo pr close<cr>", "close current pr"},
+     S = {"<cmd>:Octo pr checkout<cr>", "checkout pr"},
+     L = {"<cmd>:Octo pr commits<cr>", "list all pr commits"},
+     D = {"<cmd>:Octo pr changes<cr>", "Show all pr changes"},
+     R = {"<cmd>:Octo pr ready<cr>", "Mark a draft pr for review"},
+     I = {"<cmd>:Octo pr status<cr>", "Show status of checks in the pr"},
    },
-   t = {
-     name = "+threads",
-     c = { "<cmd>GHCreateThread<cr>", "Create" },
-     n = { "<cmd>GHNextThread<cr>", "Next" },
-     t = { "<cmd>GHToggleThread<cr>", "Toggle" },
+   r = {
+     name = "repo",
+     l = {"<cmd>:Octo repo list<cr>", "List own repositories"},
    },
+   g = {
+     name = "gist",
+     l = {"<cmd>:Octo gist list<cr>", "List gist"},
+   },
+   c = {
+     name = "comment",
+     a = {"<cmd>:Octo comment add<cr>", "add comment"},
+     d = {"<cmd>:Octo comment delete<cr>", "delete comment"},
+   }
  }
+
+
+
+
+ -- local github = {
+ --   name = "Github",
+ --   c = {
+ --     name = "+commits",
+ --     c = { "<cmd>GHCloseCommit<cr>", "Close" },
+ --     e = { "<cmd>GHExpandCommit<cr>", "Expand" },
+ --     o = { "<cmd>GHOpenToCommit<cr>", "Open To" },
+ --     p = { "<cmd>GHPopOutCommit<cr>", "Pop Out" },
+ --     z = { "<cmd>GHCollapseCommit<cr>", "Collapse" },
+ --   },
+ --   i = {
+ --     name = "+issues",
+ --     p = { "<cmd>GHPreviewIssue<cr>", "Preview" },
+ --   },
+ --   l = {
+ --     name = "+litee",
+ --     t = { "<cmd>LTPanel<cr>", "Toggle Panel" },
+ --   },
+ --   r = {
+ --     name = "+review",
+ --     b = { "<cmd>GHStartReview<cr>", "Begin" },
+ --     c = { "<cmd>GHCloseReview<cr>", "Close" },
+ --     d = { "<cmd>GHDeleteReview<cr>", "Delete" },
+ --     e = { "<cmd>GHExpandReview<cr>", "Expand" },
+ --     s = { "<cmd>GHSubmitReview<cr>", "Submit" },
+ --     z = { "<cmd>GHCollapseReview<cr>", "Collapse" },
+ --   },
+ --   p = {
+ --     name = "+pull Request",
+ --     c = { "<cmd>GHClosePR<cr>", "Close" },
+ --     d = { "<cmd>GHPRDetails<cr>", "Details" },
+ --     e = { "<cmd>GHExpandPR<cr>", "Expand" },
+ --     o = { "<cmd>GHOpenPR<cr>", "Open" },
+ --     p = { "<cmd>GHPopOutPR<cr>", "PopOut" },
+ --     r = { "<cmd>GHRefreshPR<cr>", "Refresh" },
+ --     t = { "<cmd>GHOpenToPR<cr>", "Open To" },
+ --     z = { "<cmd>GHCollapsePR<cr>", "Collapse" },
+ --   },
+ --   t = {
+ --     name = "+threads",
+ --     c = { "<cmd>GHCreateThread<cr>", "Create" },
+ --     n = { "<cmd>GHNextThread<cr>", "Next" },
+ --     t = { "<cmd>GHToggleThread<cr>", "Toggle" },
+ --   },
+ -- }
 
  local harpoon = {
    name = "Harpoon",
@@ -269,7 +313,7 @@ local database = {
 
 key.register(files, { prefix = "<leader>f"})
 key.register(git, { prefix = "<leader>g"})
-key.register(github, { prefix = "<leader>h"})
+key.register(octo, { prefix = "<leader>h"})
 key.register(lsp, {prefix = "<leader>l"})
 key.register(harpoon, {prefix = "<leader>m"})
 key.register(packer, {prefix = "<leader>p"})
