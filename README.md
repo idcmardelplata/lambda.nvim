@@ -28,7 +28,7 @@ El comando anterior descargara e instalara esta configuracion **reemplazando a l
   * **Muy sencilla de leer y modificar**
   * **Integrada con Tmux**
   * **Menús descriptivos**
-  * **Lsp & LspSaga integrados**
+  * **Mason & LspSaga integrados**
   * **Soporte para Git y Github**
   * **Autocompletado**
   * **Snippets**
@@ -62,7 +62,7 @@ El comando anterior descargara e instalara esta configuracion **reemplazando a l
 [git signs](https://github.com/lewis6991/gitsigns.nvim) 
 
 ![diagnostic_inline](./images/diagnostics_inline.png) 
-[lsp_saga](https://github.com/glepnir/lspsaga.nvim) | Permite una mejor interaccion con lsp 
+[lsp_saga](https://github.com/glepnir/lspsaga.nvim) | Permite una mejor interaccion con lsp y mason
 
 ![neotest](./images/neotest.png)
 [noetest](https://github.com/nvim-neotest/neotest)  | neotest support
