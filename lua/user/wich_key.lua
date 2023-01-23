@@ -187,54 +187,6 @@ local gs = require("gitsigns")
  }
 
 
-
-
- -- local github = {
- --   name = "Github",
- --   c = {
- --     name = "+commits",
- --     c = { "<cmd>GHCloseCommit<cr>", "Close" },
- --     e = { "<cmd>GHExpandCommit<cr>", "Expand" },
- --     o = { "<cmd>GHOpenToCommit<cr>", "Open To" },
- --     p = { "<cmd>GHPopOutCommit<cr>", "Pop Out" },
- --     z = { "<cmd>GHCollapseCommit<cr>", "Collapse" },
- --   },
- --   i = {
- --     name = "+issues",
- --     p = { "<cmd>GHPreviewIssue<cr>", "Preview" },
- --   },
- --   l = {
- --     name = "+litee",
- --     t = { "<cmd>LTPanel<cr>", "Toggle Panel" },
- --   },
- --   r = {
- --     name = "+review",
- --     b = { "<cmd>GHStartReview<cr>", "Begin" },
- --     c = { "<cmd>GHCloseReview<cr>", "Close" },
- --     d = { "<cmd>GHDeleteReview<cr>", "Delete" },
- --     e = { "<cmd>GHExpandReview<cr>", "Expand" },
- --     s = { "<cmd>GHSubmitReview<cr>", "Submit" },
- --     z = { "<cmd>GHCollapseReview<cr>", "Collapse" },
- --   },
- --   p = {
- --     name = "+pull Request",
- --     c = { "<cmd>GHClosePR<cr>", "Close" },
- --     d = { "<cmd>GHPRDetails<cr>", "Details" },
- --     e = { "<cmd>GHExpandPR<cr>", "Expand" },
- --     o = { "<cmd>GHOpenPR<cr>", "Open" },
- --     p = { "<cmd>GHPopOutPR<cr>", "PopOut" },
- --     r = { "<cmd>GHRefreshPR<cr>", "Refresh" },
- --     t = { "<cmd>GHOpenToPR<cr>", "Open To" },
- --     z = { "<cmd>GHCollapsePR<cr>", "Collapse" },
- --   },
- --   t = {
- --     name = "+threads",
- --     c = { "<cmd>GHCreateThread<cr>", "Create" },
- --     n = { "<cmd>GHNextThread<cr>", "Next" },
- --     t = { "<cmd>GHToggleThread<cr>", "Toggle" },
- --   },
- -- }
-
  local harpoon = {
    name = "Harpoon",
    m = {require('harpoon.mark').add_file, "mark file"},
