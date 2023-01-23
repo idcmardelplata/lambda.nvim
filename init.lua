@@ -14,7 +14,7 @@ local config_files = {
   "tmux",
   "neogit",
   "dashboard",
-  "gitsigns",
+  -- "gitsigns",
   "nvim_tree",
   "bufferline",
   "feline_bar",
