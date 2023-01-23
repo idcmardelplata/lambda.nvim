@@ -1,11 +1,13 @@
 return {
   'pwntester/octo.nvim',
-  requires = {
+  dependencies = {
     'nvim-lua/plenary.nvim',
     'nvim-telescope/telescope.nvim',
     'kyazdani42/nvim-web-devicons',
   },
-  config = function ()
+  keys = "<leader>h",
+  config = function()
+
     require("octo").setup({
       default_remote = {"upstream", "origin"}; -- order to try remotes
       -- ssh_aliases = {},                        -- SSH aliases. e.g. `ssh_aliases = {["github.com-work"] = "github.com"}`
@@ -147,5 +149,5 @@ return {
     }
   }
 })
-  end
+  end,
 }

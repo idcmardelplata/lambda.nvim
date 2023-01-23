@@ -73,6 +73,12 @@ local mappings = {
   {"n", "<C-Space>", "<cmd>:nohl<cr>"},
   {"n", "-q", "<cmd>:close<cr>"},
 
+  -- move in inser mode
+  {"i", "<C-h>", "<Left>"},
+  {"i", "<C-l>", "<Right>"},
+  {"i", "<C-k>", "<Up>"},
+  {"i", "<C-j>", "<Down>"},
+
 
 }
 
