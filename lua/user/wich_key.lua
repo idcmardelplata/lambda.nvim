@@ -87,32 +87,31 @@ local files = {
   e = {"<cmd>:NvimTreeToggle<cr>", "show tree"},
 }
 
-local gs = require("gitsigns")
 
  local git = {
    name = "Git",
    n = {
      function()
        if vim.wo.diff then return ']c' end
-       vim.schedule(function() gs.next_hunk() end)
+       vim.schedule(function() require("gitsigns").next_hunk() end)
        return '<Ignore>'
      end, "go to next hunk",
    },
    p = {
      function()
       if vim.wo.diff then return '[c' end
-      vim.schedule(function() gs.prev_hunk() end)
+      vim.schedule(function() require("gitsigns").prev_hunk() end)
       return '<Ignore>'
      end, "go to previous hunk",
    },
    s = { "<cmd>Gitsigns stage_hunk<cr>", "stage hunk" },
    r = { "<cmd>Gitsigns reset_hunk<cr>", "reset hunk" },
    b = { "<cmd>Gitsigns stage_buffer<cr>", "stage buffer" },
-   u = {gs.undo_stage_hunk, "undo stage junk"},
-   R = {gs.reset_buffer, "reset buffer"},
-   P = {gs.preview_hunk, "preview hunk"},
-   B = {function() gs.blame_line({full = true}) end, "blame line"},
-   d = {gs.diffthis, "show diff in the file"},
+   u = {require("gitsigns").undo_stage_hunk, "undo stage junk"},
+   R = {require("gitsigns").reset_buffer, "reset buffer"},
+   P = {require("gitsigns").preview_hunk, "preview hunk"},
+   B = {function() require("gitsigns").blame_line({full = true}) end, "blame line"},
+   d = {require("gitsigns").diffthis, "show diff in the file"},
    v = {"<cmd>DiffviewOpen<cr>", "show diff in any files"},
    c = {"<cmd>DiffviewClose<cr>", "close gitdiff"},
    g = {"<cmd>Neogit kind=tab<cr>", "Git management"},
@@ -267,6 +266,15 @@ local window_options = {
   q = {"<cmd>:quit<cr>", "close window"}
 }
 
+local mind = {
+  name = "mind",
+   o = {"<cmd>:MindOpenMain<cr>", "Open mind"},
+   c = {"<cmd>:MindClose<cr>", "Close mind"},
+   p = {"<cmd>:MindOpenProject<cr>", "Open Project"},
+   s = {"<cmd>:MindOpenSmartProject<cr>", "Open smart Project"},
+   r = {"<cmd>:MindReloadState<cr>", "Reload state"}
+}
+
 
 key.register(files, { prefix = "<leader>f"})
 key.register(git, { prefix = "<leader>g"})
@@ -281,3 +289,4 @@ key.register(telescope, {prefix = "<leader>T"})
 key.register(neotest, {prefix = "<leader>t"})
 key.register(database, {prefix = "<leader>d"})
 key.register(window_options, {prefix = "<leader>q"})
+key.register(mind, {prefix = "<leader>P"})
