@@ -15,6 +15,7 @@ local servers = { "solidity_ls",
   "html",
   "jedi_language_server",
   "pyright",
+  "neocmakelsp"
 }
 
 lsp_installer.setup({

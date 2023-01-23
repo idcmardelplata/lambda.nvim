@@ -3,7 +3,7 @@ local config_files = {
   "options",
   "utils",
   "keymaps",
-  "plugins",
+  "lazy",
   "colorscheme",
   "cmp",
   "mason_conf",
