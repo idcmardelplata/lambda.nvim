@@ -158,12 +158,22 @@ return packer.startup(function(use)
   use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
 
   use{'simrat39/rust-tools.nvim',
-    requires = {'neovim/nvim-lspconfig', 'nvim-lua/plenary.nvim'},
+    requires = {'neovim/nvim-lspconfig', 'nvim-lua/plenary.nvim', 'https://github.com/mattn/webapi-vim'},
     ft = "rust"
   }
 
   use {'autozimu/LanguageClient-neovim', branch="next", run="bash install.sh"}
 
+  use {
+    'phaazon/mind.nvim',
+    branch = 'v2.2',
+    requires = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      require 'mind'.setup()
+    end
+}
+
+  use 'eandrju/cellular-automaton.nvim'
   if PACKER_BOOTSTRAP  then
     require("packer").PackerSync()
   end
