@@ -121,8 +121,7 @@ local gs = require("gitsigns")
  -- TODO: Fix [e and ]e shortcuts
  local lsp = {
    name = "Lsp",
-   -- a = {function() require("lspsaga.codeaction").code_action(opts) end, "code action"},
-
+   a = {vim.lsp.buf.code_action, "code action"},
    f = {"<cmd>Telescope lsp_references<cr>", "find references"},
    d = {"<cmd>Telescope lsp_type_definitions<cr>", "type definitions"},
    p = {"<cmd>Telescope lsp_definitions<cr>", "show definition"},
@@ -130,7 +129,7 @@ local gs = require("gitsigns")
    w = {"<cmd>Telescope lsp_workspace_symbols<cr>", "show symbols in workspace"},
    D = {"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "dynamic symbols"},
    i = {"<cmd>Telescope lsp_implementations<cr>", "implementations"},
-   e = {require("lspsaga.diagnostic").show_line_diagnostics, "show inline diagnostics"},
+   -- e = {require("lspsaga.diagnostic").show_line_diagnostics, "show inline diagnostics"},
 
 
    --o = {require("lspsaga.hover").render_hover_doc, "show documentation"},
@@ -216,6 +215,7 @@ local gs = require("gitsigns")
    name = "Rust",
    r = {"<cmd>RustRun<cr>", "Cargo run"},
    a = {"<cmd>RustEmitAsm<cr>", "Show the asm code"},
+   f = {"<cmd>:!cargo fmt<cr>", "format the code"},
    -- c = {require("rust-tools.open_cargo_toml").open_cargo_toml, "Open cargo.toml"},
  }
 
@@ -262,6 +262,11 @@ local database = {
   l = {"<cmd>DBUILastQueryInfo<CR>", "Last query info"},
 }
 
+local window_options = {
+  name = "window",
+  q = {"<cmd>:quit<cr>", "close window"}
+}
+
 
 key.register(files, { prefix = "<leader>f"})
 key.register(git, { prefix = "<leader>g"})
@@ -275,3 +280,4 @@ key.register(rust, {prefix = "<leader>r"})
 key.register(telescope, {prefix = "<leader>T"})
 key.register(neotest, {prefix = "<leader>t"})
 key.register(database, {prefix = "<leader>d"})
+key.register(window_options, {prefix = "<leader>q"})
