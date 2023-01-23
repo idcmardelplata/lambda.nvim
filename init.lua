@@ -24,7 +24,7 @@ local config_files = {
   "ufo",
   "rust-tools",
   "neotest",
-  "octo_conf"
+  "octo_conf",
 }
 
 for _ , file  in ipairs(config_files ) do
