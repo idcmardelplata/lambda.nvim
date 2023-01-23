@@ -14,6 +14,7 @@ local servers = { "solidity_ls",
   "elixirls",
   "html",
   "jedi_language_server",
+  "pyright",
 }
 
 lsp_installer.setup({
