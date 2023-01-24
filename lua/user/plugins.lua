@@ -216,6 +216,8 @@ local plug_list = {
     cmd = {"MindClose", "MindOpenMain", "MindOpenProject","MindOpenSmartProject", "MindReloadState" }
 },
 
+ {"folke/neodev.nvim", ft="lua"}
+
 
 }
 
