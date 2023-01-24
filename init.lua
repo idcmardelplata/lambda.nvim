@@ -22,7 +22,7 @@ local config_files = {
   "surround",
   -- "harpoon",
   -- "ufo",
-  "rust-tools",
+  -- "rust-tools",
   "neotest",
   -- "octo_conf",
 }
