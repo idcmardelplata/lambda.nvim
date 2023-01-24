@@ -30,12 +30,13 @@ El comando anterior descargara e instalara esta configuracion **reemplazando a l
   * **Menús descriptivos**
   * **Mason & LspSaga integrados**
   * **Soporte para Git y Github**
+  * **Soporte para bases de datos**
+  * **Soporte para testing**
+  * **Soporte para markdown**
   * **Autocompletado**
   * **Snippets**
   * **linters en el editor**
   * **Harpoon integrado**
-  * **Soporte para testing**
-  * **Soporte para markdown**
 
 ## Screenshots
 ![wich_key](./images/hich_key.png) 
@@ -97,9 +98,9 @@ Estos mapeos de teclados son generales y no estan atados a ningun plugin en part
  **```<S-h>```**= Buffer previo
 
 #### Movimiento de texto
- **```<A-j>```**= mueve una linea hacia abajo
+ **```<S-j>```**= mueve una linea hacia abajo en modo visual
  
- **```<A-k>```**= mueve una linea hacia arriba
+ **```<S-k>```**= mueve una linea hacia arriba en modo visual
 
  **```<```**= mueve un bloque de texto hacia la izquierda en modo visual
 
