@@ -32,8 +32,7 @@ local plug_list = {
 },
 
 { "windwp/nvim-autopairs", lazy = true},
--- 'ghifarit53/tokyonight-vim',
-{ 'navarasu/onedark.nvim', lazy = true },
+{ 'JoosepAlviste/palenightfall.nvim' },
 { "iamcco/markdown-preview.nvim",
   build = "cd app && npm install",
   setup = function() vim.g.mkdp_filetypes = { "markdown", "md" } end,
