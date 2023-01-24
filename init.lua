@@ -14,17 +14,11 @@ local config_files = {
   "tmux",
   "neogit",
   "dashboard",
-  -- "gitsigns",
   "nvim_tree",
   "bufferline",
   "feline_bar",
   "wich_key",
-  "surround",
-  -- "harpoon",
-  -- "ufo",
-  -- "rust-tools",
-  "neotest",
-  -- "octo_conf",
+  "surround"
 }
 
 for _ , file  in ipairs(config_files ) do
