@@ -106,18 +106,26 @@ local plug_list = {
 -- feline bar
  { 'feline-nvim/feline.nvim', branch = '0.5-compat', lazy = true },
 
- {"nvim-neotest/neotest", lazy = true,
+ {"nvim-neotest/neotest",
  dependencies = {
    "nvim-lua/plenary.nvim",
    "nvim-treesitter/nvim-treesitter",
-   {    "antoinemadec/FixCursorHold.nvim", lazy = true },
-  }
+   { "antoinemadec/FixCursorHold.nvim", lazy = true },
+   { "rouge8/neotest-rust",  dependencies={"nvim-neotest/neotest", "nvim-lua/plenary.nvim" }, lazy = true, ft="rust"},
+   { "jfpedroza/neotest-elixir",dependencies={"nvim-neotest/neotest", "nvim-lua/plenary.nvim"}, lazy = true, ft="elixir"},
+   { "haydenmeade/neotest-jest", dependencies={"nvim-neotest/neotest", "nvim-lua/plenary.nvim"}, lazy = true, ft={"javascript", "typescript"}},
+ },
+  keys = "<leader>t",
+  config = function()
+    require("neotest").setup({
+      adapters = {
+        require("neotest-jest"),
+        require("neotest-elixir"),
+        require("neotest-rust"),
+      }
+    })
+  end,
 },
-
-
-   {"rouge8/neotest-rust",  dependencies={"nvim-neotest/neotest", "nvim-lua/plenary.nvim" }, lazy = true, ft="rust"},
-   { "jfpedroza/neotest-elixir",dependencies={"nvim-neotest/neotest", "nvim-lua/plenary.nvim"}, lazy = true},
-   { "haydenmeade/neotest-jest", dependencies={"nvim-neotest/neotest", "nvim-lua/plenary.nvim"}, lazy = true},
 
   -- wich key
    { "folke/which-key.nvim", commit = "bd4411a2ed4dd8bb69c125e339d837028a6eea71", lazy = true },
