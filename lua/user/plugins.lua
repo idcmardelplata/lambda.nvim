@@ -84,21 +84,44 @@ local plug_list = {
 { "JoosepAlviste/nvim-ts-context-commentstring", commit = "88343753dbe81c227a1c1fd2c8d764afb8d36269", lazy = true   },
 
 -- Tmux navigation
-{ "aserowy/tmux.nvim", lazy = true },
+{ "aserowy/tmux.nvim",
+   config = function ()
+    require("user.tmux");
+   end
+  },
 
 
 -- Neogit
-{ 'TimUntersberger/neogit', dependencies = 'nvim-lua/plenary.nvim', { 'sindrets/diffview.nvim', lazy = true }, lazy = true },
+{'TimUntersberger/neogit',
+  lazy = true,
+  dependencies = 'nvim-lua/plenary.nvim',
+  { 'sindrets/diffview.nvim', lazy = true },
+    keys = "<leader>gg",
+    config = function ()
+      require("user.neogit")
+    end
+  },
 
 -- Dashboard
  {'glepnir/dashboard-nvim', lazy = true},
 
 -- dadbod for database management
  {"tpope/vim-dadbod", lazy = true},
- {'kristijanhusak/vim-dadbod-ui', afer="tpope/vim-dadbod", dependencies="tpope/vim-dadbod", lazy = true},
+ {'kristijanhusak/vim-dadbod-ui',
+ afer="tpope/vim-dadbod",
+ dependencies="tpope/vim-dadbod",
+ lazy = true,
+ cmd = [[DBUIAddConnection]]
+ },
 
 -- Nvim Tree
- { 'kyazdani42/nvim-tree.lua', dependencies = { 'kyazdani42/nvim-web-devicons'}, lazy = true},
+ { 'kyazdani42/nvim-tree.lua',
+  dependencies = { 'kyazdani42/nvim-web-devicons'},
+  config = function ()
+    require("user.nvim_tree")
+  end,
+  cmd = "NvimTreeToggle"
+  },
 
 -- Bufferline 
  {'akinsho/bufferline.nvim',  dependencies = 'kyazdani42/nvim-web-devicons', lazy = true},
@@ -107,25 +130,40 @@ local plug_list = {
  { 'feline-nvim/feline.nvim', branch = '0.5-compat', lazy = true },
 
  {"nvim-neotest/neotest",
+ lazy = true,
  dependencies = {
    "nvim-lua/plenary.nvim",
    "nvim-treesitter/nvim-treesitter",
    { "antoinemadec/FixCursorHold.nvim", lazy = true },
-   { "rouge8/neotest-rust",  dependencies={"nvim-neotest/neotest", "nvim-lua/plenary.nvim" }, lazy = true, ft="rust"},
-   { "jfpedroza/neotest-elixir",dependencies={"nvim-neotest/neotest", "nvim-lua/plenary.nvim"}, lazy = true, ft="elixir"},
-   { "haydenmeade/neotest-jest", dependencies={"nvim-neotest/neotest", "nvim-lua/plenary.nvim"}, lazy = true, ft={"javascript", "typescript"}},
+ }},
+
+   {"rouge8/neotest-rust",
+     dependencies={"nvim-neotest/neotest",
+     "nvim-lua/plenary.nvim" },
+     lazy = true,
+     ft="rust",
+     config = function()
+       require("neotest").setup({ adapters = {require("neotest-rust")}})
+     end
  },
-  keys = "<leader>t",
-  config = function()
-    require("neotest").setup({
-      adapters = {
-        require("neotest-jest"),
-        require("neotest-elixir"),
-        require("neotest-rust"),
-      }
-    })
-  end,
-},
+
+   { "jfpedroza/neotest-elixir",
+     dependencies={"nvim-neotest/neotest", "nvim-lua/plenary.nvim"},
+     lazy = true,
+     ft="elixir",
+     config = function()
+       require("neotest").setup({ adapters = {require("neotest-elixir")}})
+     end
+
+ },
+   {"haydenmeade/neotest-jest",
+   dependencies={"nvim-neotest/neotest", "nvim-lua/plenary.nvim"},
+   lazy = true,
+   ft={"javascript", "typescript"},
+   config = function ()
+       require("neotest").setup({ adapters = {require("neotest-jest")}})
+   end
+ },
 
   -- wich key
    { "folke/which-key.nvim", commit = "bd4411a2ed4dd8bb69c125e339d837028a6eea71", lazy = true },
