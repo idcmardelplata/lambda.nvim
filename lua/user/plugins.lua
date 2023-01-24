@@ -65,7 +65,7 @@ local plug_list = {
 
 
 -- Telescope
-{ "nvim-telescope/telescope.nvim", commit = "d96eaa914aab6cfc4adccb34af421bdd496468b0", lazy = true },
+{ "nvim-telescope/telescope.nvim", commit = "d96eaa914aab6cfc4adccb34af421bdd496468b0" },
 {'nvim-lua/popup.nvim'},
 { 'nvim-telescope/telescope-media-files.nvim', lazy = true},
 {'xiyaowong/telescope-emoji.nvim', lazy = true},
@@ -173,7 +173,7 @@ local plug_list = {
   -- Github integration
    {
   'pwntester/octo.nvim',
-  lazy = true,
+  -- lazy = true,
   dependencies = {
     'nvim-lua/plenary.nvim',
     'nvim-telescope/telescope.nvim',
