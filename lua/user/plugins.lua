@@ -127,22 +127,31 @@ local plug_list = {
 
   -- Github integration
    {
-  'pwntester/octo.nvim', lazy = true,
+  'pwntester/octo.nvim',
+  lazy = true,
   dependencies = {
     'nvim-lua/plenary.nvim',
     'nvim-telescope/telescope.nvim',
     'kyazdani42/nvim-web-devicons',
-  }},
+  },
+  config = function() require("user.octo_conf") end,
+  keys = "<leader>h"
+},
 
   -- Harpoon
-   {  'ThePrimeagen/harpoon', dependencies = 'nvim-lua/plenary.nvim', lazy = true },
+   {  'ThePrimeagen/harpoon',
+   dependencies = 'nvim-lua/plenary.nvim',
+   lazy = true,
+   keys = {"<leader>mm", "<leader>mn",  "<leader>mo",  "<leader>mp",  "<leader>mt"}
+ },
 
   -- Glow (show markdown preview inside neovim)
    {"ellisonleao/glow.nvim", ft={"markdown", "md"}, lazy = true},
 
    {'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async', lazy = true}, -- for folding  purposes
 
-  {'simrat39/rust-tools.nvim',
+  {
+    'simrat39/rust-tools.nvim',
     dependencies = {'neovim/nvim-lspconfig', 'nvim-lua/plenary.nvim', 'https://github.com/mattn/webapi-vim'},
     ft = "rust",
     lazy = true
