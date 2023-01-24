@@ -157,7 +157,8 @@ local plug_list = {
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
       require 'mind'.setup()
-    end
+    end,
+    cmd = {"MindClose", "MindOpenMain", "MindOpenProject","MindOpenSmartProject", "MindReloadState" }
 },
 
 
