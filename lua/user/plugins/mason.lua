@@ -15,6 +15,7 @@ return {
       "tsserver",
       "emmet_ls",
       "marksman",
+      "pyright",
       -- "solidity",
       -- "marksman",
       -- "emmet_ls",
