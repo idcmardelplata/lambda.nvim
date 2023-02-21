@@ -66,5 +66,14 @@ return {
         require("lspconfig").tsserver.setup {}
       end
     })
+
+    vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
+      group = group,
+      pattern = {"*.py"},
+      callback = function ()
+        require("lspconfig").pyright.setup {}
+      end
+    })
+
   end
 }
