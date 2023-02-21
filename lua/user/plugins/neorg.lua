@@ -1,13 +1,20 @@
-return {
+local config =  {
   "nvim-neorg/neorg",
   tag = "v2.0.1",
-  dependencies = { { "nvim-lua/plenary.nvim" } },
+  dependencies = { { "nvim-lua/plenary.nvim" },
+  -- { "nvim-neorg/neorg-telescope" }
+},
   build = ":Neorg sync-parsers",
   opts = {
     load = {
       ["core.defaults"] = {}, -- Loads default behaviour
       ["core.autocommands"] = {}, 
       ["core.integrations.treesitter"] = {},
+      ["core.norg.qol.toc"] = {},
+      ["core.tangle"] = {},
+      ["core.looking-glass"] = {},
+      ["core.export"] = {},
+
       ["core.norg.concealer"] = {
         config = {
           folds = true,
@@ -55,3 +62,6 @@ return {
 },
 }
 
+
+
+return config
