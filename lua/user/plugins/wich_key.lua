@@ -258,6 +258,8 @@ local neotest = {
   s = {"<cmd>:lua require('neotest').summary.toggle()<cr>", "Open tests summary" },
   p = {"<cmd>:lua require('neotest').output_panel.toggle()<cr>", "stream all output" },
   o = {"<cmd>:lua require('neotest').output.open({enter=true})<cr>", "stream all output" },
+  n = {"<cmd>:lua require('neotest').jump.next({status = 'failed'})<cr>", "jump next failed test" },
+  N = {"<cmd>:lua require('neotest').jump.prev({status = 'failed'})<cr>", "jump prev failed test" },
 
 }
 
