@@ -97,6 +97,10 @@ vim.opt.rtp:prepend(lazypath)
    require("user.plugins.mind"),
 
    require("user.plugins.neodev"),
+
+   require("user.plugins.neorg")
+
+
  }
 
 local opts = {}
