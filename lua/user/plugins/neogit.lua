@@ -1,7 +1,7 @@
 return {'TimUntersberger/neogit',
 lazy = true,
 dependencies = 'nvim-lua/plenary.nvim',
-{'sindrets/diffview.nvim', lazy = true },
+{'sindrets/diffview.nvim', lazy = false },
 keys = "<leader>gg",
 config = function ()
   require("neogit").setup {
