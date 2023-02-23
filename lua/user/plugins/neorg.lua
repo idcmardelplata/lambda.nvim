@@ -14,7 +14,29 @@ local config =  {
       ["core.tangle"] = {},
       ["core.looking-glass"] = {},
       ["core.export"] = {},
+      ["core.keybinds"] = {
+        config = {
+          hook = function(keybinds)
+            -- New note
+            keybinds.map("norg", "n", "<C-n>", ":Neorg keybind all core.norg.dirman.new.note<cr>")
 
+            -- Move between headers
+            keybinds.map("norg", "n", "}", ":Neorg keybind all core.integrations.treesitter.next.heading<cr>")
+            keybinds.map("norg", "n", "{", ":Neorg keybind all core.integrations.treesitter.previous.heading<cr>")
+
+            -- Move between links
+            keybinds.map("norg", "n", "]", ":Neorg keybind all core.integrations.treesitter.next.link<cr>")
+            keybinds.map("norg", "n", "[", ":Neorg keybind all core.integrations.treesitter.previous.link<cr>")
+
+            -- Toggle looking-glass 
+            keybinds.map("norg", "n", "gs", ":Neorg keybind all core.looking-glass.magnify-code-block<cr>")
+
+            -- Quit Neorg
+            keybinds.map("norg", "n", "gq", ":Neorg return<cr>")
+
+          end
+        }
+      },
       ["core.norg.concealer"] = {
         config = {
           folds = true,
