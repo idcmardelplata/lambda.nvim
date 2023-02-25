@@ -4,6 +4,7 @@ return {
   dependencies = {
     { 'nvim-telescope/telescope-media-files.nvim', lazy = true},
     {'xiyaowong/telescope-emoji.nvim', lazy = true},
+    {'olacin/telescope-cc.nvim', lazy = true},
   },
 
   config = function()
@@ -12,6 +13,7 @@ return {
     local actions = require "telescope.actions"
     telescope.load_extension('media_files')
     telescope.load_extension('emoji')
+    telescope.load_extension("conventional_commits")
 
     telescope.setup {
       defaults = {
