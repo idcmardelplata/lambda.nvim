@@ -76,6 +76,7 @@ local config =  {
           work = "~/notes/work",
           home = "~/notes/home",
           learn = "~/notes/learn",
+          teach = "~/notes/teach",
         },
         default_workspace = "notes"
       },
