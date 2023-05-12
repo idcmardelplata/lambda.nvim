@@ -2,7 +2,7 @@ return {
   'feline-nvim/feline.nvim',
   branch = '0.5-compat',
   config = function()
-    require('feline').setup({})
+    -- require('feline').setup({})
     local lsp = require('feline.providers.lsp')
     local vi_mode_utils = require('feline.providers.vi_mode')
 
@@ -351,7 +351,7 @@ return {
         },
         ' '
       }
-    },
+    }
 
     require('feline').setup({
       theme = colors,
@@ -359,7 +359,7 @@ return {
       default_fg = colors.fg,
       vi_mode_colors = vi_mode_colors,
       components = components,
-      force_inactive = force_inactive,
+      force_inactive = force_inactive
     })
 
   end
