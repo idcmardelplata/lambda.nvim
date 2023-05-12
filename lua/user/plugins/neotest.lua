@@ -1,3 +1,4 @@
+-- FIX: Is necessary load the adapters from here to avoid generate redundancy.
 return {"nvim-neotest/neotest",
 lazy = true,
 dependencies = {

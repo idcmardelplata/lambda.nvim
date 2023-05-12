@@ -1,3 +1,4 @@
+-- FIX: This adapter should be loaded from neotest config file
 return {
   "rouge8/neotest-rust",
   dependencies={"nvim-neotest/neotest",
