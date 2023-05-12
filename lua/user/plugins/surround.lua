@@ -1,6 +1,6 @@
 return {
   "kylechui/nvim-surround",
-  lazy = true,
+  -- lazy = true,
   config = function()
     local surround = require("nvim-surround")
     surround.setup {
