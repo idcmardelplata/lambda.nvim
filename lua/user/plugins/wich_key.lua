@@ -70,14 +70,14 @@ return  {
     }
 
 
-local opts = {
-  mode = "n",
-  prefix = "",
-  buffer = nil,
-  silent = true,
-  noremap = true,
-  nowait = false,
-}
+-- local opts = {
+--   mode = "n",
+--   prefix = "",
+--   buffer = nil,
+--   silent = true,
+--   noremap = true,
+--   nowait = false,
+-- }
 
 local files = {
   name = "Files",
