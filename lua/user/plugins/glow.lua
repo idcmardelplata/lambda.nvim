@@ -1,5 +1,7 @@
 return {
   "ellisonleao/glow.nvim",
-  ft={"markdown", "md"},
-  lazy = true
+  ft={"markdown", "md", "adoc", "asciidoc"},
+  lazy = true,
+  config = true,
+  cmd = "Glow",
 }
