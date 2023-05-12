@@ -98,8 +98,22 @@ vim.opt.rtp:prepend(lazypath)
 
    require("user.plugins.neodev"),
 
-   require("user.plugins.neorg")
+   require("user.plugins.neorg"),
+   require("user.plugins.asciidoc-preview"),
+   require("user.plugins.venn"),
 
+
+   require("user.plugins.fzf"),
+
+   -- Better quickfix
+   require("user.plugins.bqf"),
+   require("user.plugins.trouble"),
+
+   -- TODO-Comments
+   require("user.plugins.todo_comments"),
+
+   -- Noice
+   require("user.plugins.noice"),
 
  }
 
