@@ -92,30 +92,32 @@ local files = {
 }
 
 
+local signs = require("gitsigns")
+
  local git = {
    name = "Git",
    n = {
      function()
        if vim.wo.diff then return ']c' end
-       vim.schedule(function() require("gitsigns").next_hunk() end)
+       vim.schedule(function() signs.next_hunk() end)
        return '<Ignore>'
      end, "go to next hunk",
    },
    p = {
      function()
       if vim.wo.diff then return '[c' end
-      vim.schedule(function() require("gitsigns").prev_hunk() end)
+      vim.schedule(function() signs.prev_hunk() end)
       return '<Ignore>'
      end, "go to previous hunk",
    },
-   s = { "<cmd>Gitsigns stage_hunk<cr>", "stage hunk" },
-   r = { "<cmd>Gitsigns reset_hunk<cr>", "reset hunk" },
-   b = { "<cmd>Gitsigns stage_buffer<cr>", "stage buffer" },
-   u = {require("gitsigns").undo_stage_hunk, "undo stage junk"},
-   R = {require("gitsigns").reset_buffer, "reset buffer"},
-   P = {require("gitsigns").preview_hunk, "preview hunk"},
-   B = {function() require("gitsigns").blame_line({full = true}) end, "blame line"},
-   d = {require("gitsigns").diffthis, "show diff in the file"},
+   s = {signs.stage_hunk, "stage hunk" },
+   r = {signs.reset_hunk, "reset hunk" },
+   b = {signs.stage_buffer, "stage buffer" },
+   u = {signs.undo_stage_hunk, "undo stage junk"},
+   R = {signs.reset_buffer, "reset buffer"},
+   P = {signs.preview_hunk, "preview hunk"},
+   B = {function() signs.blame_line({full = true}) end, "blame line"},
+   d = {signs.diffthis, "show diff in the file"},
    v = {"<cmd>DiffviewOpen<cr>", "show diff in any files"},
    c = {"<cmd>DiffviewClose<cr>", "close gitdiff"},
    g = {"<cmd>Neogit kind=tab<cr>", "Git management"},
