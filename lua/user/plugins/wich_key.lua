@@ -123,6 +123,14 @@ local signs = require("gitsigns")
    g = {"<cmd>Neogit kind=tab<cr>", "Git management"},
  }
 
+ local todo = {
+   name = "Todo Comments",
+   l = {"<cmd>TodoLocList<cr>", "Todo location list"},
+   q = {"<cmd>TodoQuickFix<cr>", "Todo quickfix"},
+   t = {"<cmd>TodoTelescope<cr>", "Todo telescope"},
+   u = {"<cmd>TodoTrouble<cr>", "Todo trouble"},
+ }
+
  -- TODO: Fix [e and ]e shortcuts
  local lsp = {
    name = "Lsp",
@@ -135,6 +143,7 @@ local signs = require("gitsigns")
    D = {"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "dynamic symbols"},
    i = {"<cmd>Telescope lsp_implementations<cr>", "implementations"},
    e = {"<cmd>Lspsaga show_line_diagnostics<cr>", "show inline diagnostic"},
+   t = {"<cmd>TroubleToggle<cr>", "Diagnostics"},
    -- e = {require("lspsaga.diagnostic").show_line_diagnostics, "show inline diagnostics"},
 
 
@@ -301,6 +310,7 @@ key.register(neotest, {prefix = "<leader>t"})
 key.register(database, {prefix = "<leader>d"})
 key.register(window_options, {prefix = "<leader>q"})
 key.register(mind, {prefix = "<leader>P"})
+key.register(todo, {prefix = "<leader>o"})
 
 
 
