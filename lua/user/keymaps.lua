@@ -72,6 +72,7 @@ local mappings = {
   {"n", "<C-s>", "<cmd>:write<cr>"},
   {"n", "<C-Space>", "<cmd>:nohl<cr>"},
   {"n", "-q", "<cmd>:close<cr>"},
+  {"n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>"},
 
   -- move in inser mode
   {"i", "<C-h>", "<Left>"},
