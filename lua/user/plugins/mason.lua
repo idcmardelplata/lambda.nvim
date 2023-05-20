@@ -8,6 +8,10 @@ return {
     local mason = require("mason")
     local mason_config = require("mason-lspconfig")
 
+    -- local on_attach = require("lspconfig").on_attach
+    local capabilities = require("lspconfig").capabilities
+    local lspconfig = require("lspconfig")
+
     local servers = {
       "lua_ls",
       "rust_analyzer",
@@ -39,11 +43,11 @@ return {
     }
 
 
-    require("lspconfig").emmet_ls.setup {}
+    lspconfig.emmet_ls.setup {}
 
     local group = vim.api.nvim_create_augroup("MasonLspGroup", {clear = true})
 
-    vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
+    vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"} , {
       group = group,
       pattern = {"*.lua"},
       callback = function ()
@@ -69,15 +73,40 @@ return {
       end
     })
 
+
     vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
       group = group,
       pattern = {"*.rs"},
       callback = function ()
-        require("lspconfig").rust_analyzer.setup {}
+        require("lspconfig").rust_analyzer.setup {
+          -- on_attach = on_attach,
+          -- capabilities = capabilities,
+          filetypes = {"rust"},
+          root_dir = require("lspconfig/util").root_pattern("Cargo.toml"),
+
+          settings = {
+            ['rust_analyzer'] = {
+              imports = {
+                granularity = {
+                  group = "module",
+                },
+                prefix = "self",
+              },
+              cargo = {
+                buildScripts = {
+                  allFeatures = true,
+                },
+              },
+              procMacro = {
+                enable = true
+              },
+            }
+          }
+        }
       end
     })
 
-    vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
+    vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"},  {
       group = group,
       pattern = {"*.js", "*.ts"},
       callback = function ()
