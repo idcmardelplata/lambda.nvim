@@ -91,7 +91,7 @@ vim.opt.rtp:prepend(lazypath)
 
    require("user.plugins.ufo"),
 
-   require("user.plugins.rust-tools"),
+   -- require("user.plugins.rust-tools"),
 
    require("user.plugins.language_client_nvim"),
    require("user.plugins.mind"),
