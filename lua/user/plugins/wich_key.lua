@@ -81,7 +81,7 @@ return  {
 
 local files = {
   name = "Files",
-  n = {"<cmd>:DashboardNewFile<cr>", "create new file"},
+  n = {"<cmd>:enew<cr>", "create new file"},
   h = {"<cmd>new<cr>", "create new buffer in horizontal"},
   v = {"<cmd>:vnew<cr>", "create new buffer in vertical"},
   f = {"<cmd>lua require('telescope.builtin').find_files( require('telescope.themes').get_dropdown({previewer = false}), {hidden = true})<cr>", "find files"},
@@ -144,6 +144,7 @@ local signs = require("gitsigns")
    i = {"<cmd>Telescope lsp_implementations<cr>", "implementations"},
    e = {"<cmd>Lspsaga show_line_diagnostics<cr>", "show inline diagnostic"},
    t = {"<cmd>TroubleToggle<cr>", "Diagnostics"},
+   r = {vim.lsp.buf.rename, "Rename"},
    -- e = {require("lspsaga.diagnostic").show_line_diagnostics, "show inline diagnostics"},
 
 
@@ -295,6 +296,42 @@ local mind = {
    r = {"<cmd>:MindReloadState<cr>", "Reload state"}
 }
 
+local notes = {
+  name = "Notes",
+  b = {"<cmd>:lua  require('telekasten').browse_media()<cr>", "Browse Media Files"},
+  B = {"<cmd>:lua  require('telekasten').show_backlinks()<cr>", "Show Backlinks"},
+  c = {'<cmd>Telekasten show_calendar<cr>', "Calendar"},
+  d = {'<cmd>vsplit || Telekasten goto_today<cr>', "Daily"},
+  D = {'<cmd>Telekasten find_daily_notes<cr>', "Find dailies"},
+  f = {'<cmd>Telekasten find_notes<cr>', "Find notes"},
+  F = {'<cmd>Telekasten follow_link<cr>', "Follow Link"},
+  g = {'<cmd>Telekasten search_notes<cr>', "Search string in notes"},
+  i = {'<cmd>Telekasten insert_link<cr>', "Insert Link"},
+  I = {'<cmd>Telekasten insert_img_link<cr>', "Insert image Link"},
+  J = {"<cmd>put =strftime('%F')<cr>", "Insert Date"},
+  j = {"<cmd>put =strftime('%a %d %b %r')<cr>", "Insert human Date"},
+  K = {"<cmd>put =strftime('%F-%H-%M')<cr>", "Insert time"},
+  k = {"<cmd>put =strftime('%r')<cr>", "Insert human time"},
+  t = {"<cmd>Telekasten show_tags<cr>", "Tags"},
+  T = {"<cmd>Telescope live_grep cwd=$NOTES_ROOT <cr>", "Search notes"},
+  n = {"<cmd>Telekasten new_note<cr>", "New note"},
+  N = {"<cmd>execute 'e '.strftime(\"%F\").'md'<cr>", "New note here"},
+  o = {"<cmd>vsplit $NOTES_ROOT/<cr>", "Open Notes"},
+  p = {"<cmd>Telekasten<cr>", "Telekasten"},
+  s = {"<cmd>:lua require('telekasten').find_friends<cr>", "Find Friends"},
+
+
+  r = {"<cmd>:lua  require('telekasten').rename_note", "Rename Note"},
+  w = {"<cmd>Telekasten goto_thisweek<cr>", "Weekly"},
+  W = {"<cmd>Telekasten find_weekly_notes<cr>", "Find Weeklies"},
+  v = {"<cmd>MarkdownPreviewToggle<cr>", "Preview"},
+  x = {"<cmd>Telekasten toggle_todo<cr>", "Toggle Todo"},
+  y = {"<cmd>Telekasten yank_notelink<cr>", "Copy note link"},
+  z = {"<cmd>execute 'vsplit $NOTES_ROOT/notes/draft/'.strftime(\"%F-%H%M\").'.md' <cr>", "New zettelkasten"},
+  Z = {"<cmd>execute 'e '.strftime(\"%F-%H-%M\").'.md' <cr>", "New zettelkasten here"},
+
+}
+
 
 key.register(files, { prefix = "<leader>f"})
 key.register(git, { prefix = "<leader>g"})
@@ -311,6 +348,7 @@ key.register(database, {prefix = "<leader>d"})
 key.register(window_options, {prefix = "<leader>q"})
 key.register(mind, {prefix = "<leader>P"})
 key.register(todo, {prefix = "<leader>o"})
+key.register(notes, {prefix = "<leader>n"})
 
 
 

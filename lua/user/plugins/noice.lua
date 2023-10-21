@@ -18,6 +18,13 @@ return {
         inc_rename = false, -- enables an input dialog for inc-rename.nvim
         lsp_doc_border = false, -- add a border to hover docs and signature help
       },
+      messages = {
+        enabled = true,
+        view_error = false,
+        view_warn = false,
+        view_history = "messages",
+        view_search = "virtualtext",
+      }
     })
   end,
   dependencies = {
@@ -26,6 +33,11 @@ return {
     -- OPTIONAL:
     --   `nvim-notify` is only needed, if you want to use the notification view.
     --   If not available, we use `mini` as the fallback
-    "rcarriga/nvim-notify",
+  {"rcarriga/nvim-notify", config = function ()
+    require("notify").setup {
+      timeout=100
+    }
+  end
+},
   }
 }

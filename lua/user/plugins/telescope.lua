@@ -1,6 +1,6 @@
 return { 
   "nvim-telescope/telescope.nvim",
-  commit = "d96eaa914aab6cfc4adccb34af421bdd496468b0",
+  -- commit = "d96eaa914aab6cfc4adccb34af421bdd496468b0",
   dependencies = {
     { 'nvim-telescope/telescope-media-files.nvim', lazy = true},
     {'xiyaowong/telescope-emoji.nvim', lazy = true},

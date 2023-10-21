@@ -23,6 +23,7 @@ vim.opt.rtp:prepend(lazypath)
    require("user.plugins.cmp_luasnip"),
    require("user.plugins.cmp-nvim-lsp"),
    require("user.plugins.cmp-nvim-lua"),
+   require("user.plugins.cmp-zotcite"),
 
  -- snippets
    require("user.plugins.luasnipts"),
@@ -40,6 +41,7 @@ vim.opt.rtp:prepend(lazypath)
 
  -- Treesitter
    require("user.plugins.treesitter"),
+   require("user.plugins.treesitter-text-objects"),
 
  -- Rainbown
    require("user.plugins.rainbow"),
@@ -74,6 +76,7 @@ vim.opt.rtp:prepend(lazypath)
    require("user.plugins.neotest_rust"),
    require("user.plugins.neotest_elixir"),
    require("user.plugins.neotest_jest"),
+   require("user.plugins.neotest_python"),
 
    -- wich key
    require("user.plugins.wich_key"),
@@ -90,8 +93,6 @@ vim.opt.rtp:prepend(lazypath)
    require("user.plugins.glow"),
 
    require("user.plugins.ufo"),
-
-   -- require("user.plugins.rust-tools"),
 
    require("user.plugins.language_client_nvim"),
    require("user.plugins.mind"),
@@ -114,6 +115,21 @@ vim.opt.rtp:prepend(lazypath)
 
    -- Noice
    require("user.plugins.noice"),
+
+   require("user.plugins.bluloco"),
+
+   -- transparency in neovim
+
+   require("user.plugins.transparency"),
+
+   -- Telekasten (zettelkasten for nvim)
+   require("user.plugins.telekasten_plugin"),
+   require("user.plugins.calendar"),
+
+   require("user.plugins.zotcite"),
+
+   
+
 
  }
 
