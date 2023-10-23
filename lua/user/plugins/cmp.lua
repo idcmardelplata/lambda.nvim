@@ -108,6 +108,7 @@ sources = {
   { name = "buffer" },
   { name = "path" },
   { name = "neorg"},
+  { name = "conjure"}
 },
 confirm_opts = {
   behavior = cmp.ConfirmBehavior.Replace,
