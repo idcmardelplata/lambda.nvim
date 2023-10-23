@@ -129,7 +129,8 @@ vim.opt.rtp:prepend(lazypath)
    require("user.plugins.zotcite"),
 
    -- Lisp Plugin
-   require("user.plugins.conjure")
+   -- require("user.plugins.conjure"),
+   require("user.plugins.nvlime")
 
  }
 
